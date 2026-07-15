@@ -1,0 +1,17 @@
+{
+  "name": "Wendao.Data",
+  "rootNamespace": "Wendao.Data",
+  "references": [
+    "Wendao.Core",
+    "Unity.Newtonsoft.Json"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

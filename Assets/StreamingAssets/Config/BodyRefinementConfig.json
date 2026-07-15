@@ -1,0 +1,50 @@
+{
+  "levels": [
+    {
+      "level": 0,
+      "name": "凡躯",
+      "xpToNext": 0,
+      "hpBonus": 0,
+      "physDR": 0,
+      "controlResist": 0,
+      "revive": false
+    },
+    {
+      "level": 1,
+      "name": "铜皮铁骨",
+      "xpToNext": 1000,
+      "hpBonus": 0.2,
+      "physDR": 0.1,
+      "controlResist": 0,
+      "revive": false
+    },
+    {
+      "level": 2,
+      "name": "金刚不坏",
+      "xpToNext": 4000,
+      "hpBonus": 0.5,
+      "physDR": 0.25,
+      "controlResist": 0.3,
+      "revive": false
+    },
+    {
+      "level": 3,
+      "name": "不灭金身",
+      "xpToNext": 12000,
+      "hpBonus": 1.0,
+      "physDR": 0.4,
+      "controlResist": 1.0,
+      "revive": false
+    },
+    {
+      "level": 4,
+      "name": "万劫不灭",
+      "xpToNext": 0,
+      "hpBonus": 2.0,
+      "physDR": 0.5,
+      "controlResist": 1.0,
+      "revive": true
+    }
+  ],
+  "xpFromDamageTakenMul": 0.1
+}

@@ -1,0 +1,70 @@
+{
+  "roots": [
+    {
+      "type": "Metal",
+      "cultivationMul": 1.1,
+      "elementBonus": { "Metal": 0.15 },
+      "bodyMul": 1.0,
+      "uniquePassiveId": "passive_element_affinity",
+      "introDescriptionKey": "root_intro_five"
+    },
+    {
+      "type": "Wood",
+      "cultivationMul": 1.1,
+      "elementBonus": { "Wood": 0.15 },
+      "bodyMul": 1.0,
+      "uniquePassiveId": "passive_element_affinity",
+      "introDescriptionKey": "root_intro_five"
+    },
+    {
+      "type": "Water",
+      "cultivationMul": 1.1,
+      "elementBonus": { "Water": 0.15, "Ice": 0.10 },
+      "bodyMul": 1.0,
+      "uniquePassiveId": "passive_element_affinity",
+      "introDescriptionKey": "root_intro_five"
+    },
+    {
+      "type": "Fire",
+      "cultivationMul": 1.1,
+      "elementBonus": { "Fire": 0.15 },
+      "bodyMul": 1.0,
+      "uniquePassiveId": "passive_element_affinity",
+      "introDescriptionKey": "root_intro_five"
+    },
+    {
+      "type": "Earth",
+      "cultivationMul": 1.1,
+      "elementBonus": { "Earth": 0.15 },
+      "bodyMul": 1.15,
+      "uniquePassiveId": null,
+      "introDescriptionKey": "root_intro_five"
+    },
+    {
+      "type": "Heaven",
+      "cultivationMul": 1.35,
+      "elementBonus": { "All": 0.10 },
+      "bodyMul": 1.0,
+      "weight": 0.05,
+      "uniquePassiveId": "passive_heaven_gift",
+      "introDescriptionKey": "root_intro_heaven"
+    },
+    {
+      "type": "Waste",
+      "cultivationMul": 0.55,
+      "elementBonus": {},
+      "bodyMul": 1.5,
+      "weight": 0.15,
+      "uniquePassiveId": "passive_waste_iron_vein",
+      "introDescriptionKey": "root_intro_waste",
+      "passives": {
+        "blockPhysDrBonus": 0.10,
+        "physicalDamageBonus": 0.10,
+        "bodyPotionMul": 1.25,
+        "grantPassiveSkillIdOnCreate": null
+      }
+    }
+  ],
+  "defaultPickable": ["Metal", "Wood", "Water", "Fire", "Earth"],
+  "randomEnabled": true
+}

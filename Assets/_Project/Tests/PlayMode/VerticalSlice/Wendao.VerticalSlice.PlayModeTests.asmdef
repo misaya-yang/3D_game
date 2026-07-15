@@ -1,0 +1,28 @@
+{
+  "name": "Wendao.VerticalSlice.PlayModeTests",
+  "rootNamespace": "Wendao.Tests.PlayMode.VerticalSlice",
+  "references": [
+    "Wendao.Core",
+    "Wendao.Data",
+    "Wendao.Systems",
+    "Wendao.Entities",
+    "Wendao.Camera",
+    "Wendao.UI",
+    "Unity.InputSystem",
+    "UnityEngine.UI"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

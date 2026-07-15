@@ -1,0 +1,21 @@
+{
+  "name": "Wendao.Project.PlayModeTests",
+  "rootNamespace": "Wendao.Tests.PlayMode",
+  "references": [
+    "Wendao.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

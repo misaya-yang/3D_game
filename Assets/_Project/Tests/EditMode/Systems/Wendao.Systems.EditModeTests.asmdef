@@ -1,0 +1,25 @@
+{
+  "name": "Wendao.Systems.EditModeTests",
+  "rootNamespace": "Wendao.Tests.EditMode.Systems",
+  "references": [
+    "Wendao.Core",
+    "Wendao.Data",
+    "Wendao.Systems"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false,
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ]
+}

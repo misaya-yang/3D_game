@@ -1,0 +1,66 @@
+{
+  "realms": [
+    {
+      "realm": 1,
+      "name": "练气",
+      "subStages": 9,
+      "xpPerSubStage": [100, 200, 350, 550, 800, 1200, 1700, 2400, 3200],
+      "baseStatsPerSubStage": {
+        "maxHp": [100, 120, 145, 175, 210, 250, 300, 360, 430],
+        "maxMana": [50, 60, 72, 86, 100, 120, 140, 165, 190],
+        "attack": [10, 12, 15, 18, 22, 27, 33, 40, 48],
+        "defense": [5, 6, 8, 10, 12, 15, 18, 22, 26]
+      },
+      "breakthroughToNext": {
+        "baseSuccessRate": 0.85,
+        "minSubStage": 9,
+        "failXpPenaltyPercent": 0.2,
+        "requiredItemId": "item_pill_foundation"
+      }
+    },
+    {
+      "realm": 2,
+      "name": "筑基",
+      "subStages": 3,
+      "xpPerSubStage": [5000, 8000, 12000],
+      "baseStatsPerSubStage": {
+        "maxHp": [600, 750, 950],
+        "maxMana": [250, 320, 400],
+        "attack": [65, 80, 100],
+        "defense": [35, 45, 55]
+      },
+      "breakthroughToNext": {
+        "baseSuccessRate": 0.65,
+        "minSubStage": 3,
+        "failXpPenaltyPercent": 0.2,
+        "requiredItemId": "item_pill_goldencore"
+      }
+    },
+    {
+      "realm": 3,
+      "name": "金丹",
+      "subStages": 3,
+      "xpPerSubStage": [20000, 35000, 50000],
+      "baseStatsPerSubStage": {
+        "maxHp": [1400, 1800, 2300],
+        "maxMana": [550, 700, 900],
+        "attack": [140, 175, 220],
+        "defense": [75, 95, 120]
+      },
+      "breakthroughToNext": null
+    },
+    {
+      "realm": 4,
+      "name": "元婴",
+      "subStages": 3,
+      "xpPerSubStage": [80000, 120000, 180000],
+      "baseStatsPerSubStage": {
+        "maxHp": [3200, 4000, 5000],
+        "maxMana": [1200, 1500, 1900],
+        "attack": [300, 380, 480],
+        "defense": [160, 200, 250]
+      },
+      "breakthroughToNext": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "alchemy": [
+    { "level": 1, "xpRequired": 0, "maxRecipeTier": 1, "successBonus": 0 },
+    { "level": 2, "xpRequired": 200, "maxRecipeTier": 2, "successBonus": 0.03 },
+    { "level": 3, "xpRequired": 600, "maxRecipeTier": 2, "successBonus": 0.06 },
+    { "level": 4, "xpRequired": 1500, "maxRecipeTier": 3, "successBonus": 0.10 },
+    { "level": 5, "xpRequired": 3000, "maxRecipeTier": 3, "successBonus": 0.14 },
+    { "level": 6, "xpRequired": 6000, "maxRecipeTier": 4, "successBonus": 0.18 },
+    { "level": 7, "xpRequired": 10000, "maxRecipeTier": 4, "successBonus": 0.22 },
+    { "level": 8, "xpRequired": 15000, "maxRecipeTier": 5, "successBonus": 0.26 },
+    { "level": 9, "xpRequired": 25000, "maxRecipeTier": 5, "successBonus": 0.30 },
+    { "level": 10, "xpRequired": 40000, "maxRecipeTier": 6, "successBonus": 0.35 }
+  ]
+}
