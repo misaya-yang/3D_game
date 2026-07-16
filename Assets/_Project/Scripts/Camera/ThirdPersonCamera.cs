@@ -43,6 +43,7 @@ namespace Wendao.CameraSystem
         {
             public Renderer Renderer;
             public MaterialPropertyBlock OriginalProperties;
+            public bool OriginalForceRenderingOff;
         }
 
         private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
@@ -81,7 +82,8 @@ namespace Wendao.CameraSystem
         public float CurrentFov => _camera != null
             ? _camera.fieldOfView
             : ExploreFov;
-        public bool IsCombatMode => _combatMode;
+        public bool IsCombatMode => _combatMode
+            || GameManager.Instance?.IsInCombat == true;
         public Transform DialogueFocus => _dialogueFocus;
         public float ShakeIntensity => _shakeIntensity;
         public float ShakeRemaining => _shakeRemaining;
@@ -425,7 +427,7 @@ namespace Wendao.CameraSystem
                 return MountedDistance;
             }
 
-            return _combatMode || _lockOnTarget != null
+            return IsCombatMode || _lockOnTarget != null
                 ? CombatDistance
                 : ExploreDistance;
         }
@@ -447,7 +449,7 @@ namespace Wendao.CameraSystem
                 return LockOnFov;
             }
 
-            return _combatMode ? CombatFov : ExploreFov;
+            return IsCombatMode ? CombatFov : ExploreFov;
         }
 
         private float ResolveCollisionDistance(
@@ -541,12 +543,21 @@ namespace Wendao.CameraSystem
             color.a = OccluderAlpha;
             faded.SetColor(colorProperty, color);
             renderer.SetPropertyBlock(faded);
+            bool originalForceRenderingOff = renderer.forceRenderingOff;
+            if (material.renderQueue < (int)UnityEngine.Rendering.RenderQueue.Transparent)
+            {
+                // Alpha property blocks do not fade opaque URP materials.
+                // Hide the obstructing renderer while camera collision already
+                // keeps the view in front of the wall, then restore it below.
+                renderer.forceRenderingOff = true;
+            }
             _fadedOccluders.Add(
                 renderer,
                 new OccluderFadeState
                 {
                     Renderer = renderer,
-                    OriginalProperties = original
+                    OriginalProperties = original,
+                    OriginalForceRenderingOff = originalForceRenderingOff
                 });
         }
 
@@ -562,6 +573,7 @@ namespace Wendao.CameraSystem
             if (state.Renderer != null)
             {
                 state.Renderer.SetPropertyBlock(state.OriginalProperties);
+                state.Renderer.forceRenderingOff = state.OriginalForceRenderingOff;
             }
 
             _fadedOccluders.Remove(renderer);

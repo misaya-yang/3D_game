@@ -202,7 +202,7 @@ namespace Wendao.UI.Shop
                     : ConfigDatabase.Instance?.GetItem(slot.ItemId);
                 bool sellable = IsSellable(slot, item);
                 _sellSlotLabels[index].text = item == null
-                    ? EmptySlotDefaultValue
+                    ? string.Empty
                     : string.Format(
                         SellRowDefaultValue,
                         item.DisplayName,
@@ -255,6 +255,13 @@ namespace Wendao.UI.Shop
                 new Color(0.95f, 0.78f, 0.42f, 1f),
                 new Vector2(1120f, 58f),
                 new Vector2(0f, 420f));
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "ShopTitleIcon",
+                "shoppingBasket",
+                new Vector2(40f, 40f),
+                new Vector2(-125f, 420f),
+                RuntimeUiTheme.GoldSoft);
             RuntimeUiFactory.CreateText(
                 panel.transform,
                 "ShopHelp",
@@ -327,7 +334,7 @@ namespace Wendao.UI.Shop
                 Button button = CreateButton(
                     gridObject.transform,
                     $"ShopSellSlot_{index:00}",
-                    EmptySlotDefaultValue,
+                    string.Empty,
                     15,
                     new Vector2(132f, 48f),
                     Vector2.zero);

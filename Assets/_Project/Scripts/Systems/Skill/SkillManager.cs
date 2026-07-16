@@ -6,6 +6,7 @@ using UnityEngine;
 using Wendao.Core;
 using Wendao.Data;
 using Wendao.Systems.Combat;
+using Wendao.Systems.Input;
 using Wendao.Systems.Inventory;
 
 namespace Wendao.Systems.Skill
@@ -33,6 +34,7 @@ namespace Wendao.Systems.Skill
         private ReadOnlyCollection<SkillRuntime> _readOnlyLearned;
         private IPlayerResourceService _resourceService;
         private IPlayerSkillCaster _caster;
+        private IPlayerInputSource _playerInput;
         private SaveManager _registeredSaveManager;
         private ActiveCast _activeCast;
         private bool _registeredService;
@@ -76,6 +78,14 @@ namespace Wendao.Systems.Skill
 
             float deltaTime = Mathf.Max(0f, Time.deltaTime);
             TickCooldowns(deltaTime);
+            if (_activeCast != null
+                && !IsMissingUnityService(_playerInput)
+                && !_playerInput.IsEnabled)
+            {
+                CancelActiveCast();
+                return;
+            }
+
             TickActiveCast(deltaTime);
         }
 
@@ -570,6 +580,7 @@ namespace Wendao.Systems.Skill
         {
             ServiceLocator.TryGet(out _resourceService);
             ServiceLocator.TryGet(out _caster);
+            ServiceLocator.TryGet(out _playerInput);
         }
 
         private void FinishActiveCast()

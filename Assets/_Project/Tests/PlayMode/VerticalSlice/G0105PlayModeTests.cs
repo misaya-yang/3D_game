@@ -332,7 +332,7 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
             Assert.That(camera.ReactionFovOffset, Is.Zero.Within(0.0001f));
             Assert.That(
                 camera.CurrentFov,
-                Is.EqualTo(ThirdPersonCamera.ExploreFov).Within(0.001f));
+                Is.EqualTo(ThirdPersonCamera.CombatFov).Within(0.001f));
         }
 
         [Test]

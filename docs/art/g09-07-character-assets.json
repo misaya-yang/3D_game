@@ -1,0 +1,3938 @@
+{
+  "blender_version": "5.2.0 LTS",
+  "assets": [
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Characters/Cultivator.fbx",
+      "file_size_bytes": 4223116,
+      "bounds": {
+        "min": [
+          -1.41652,
+          -0.20541,
+          0.00043
+        ],
+        "max": [
+          1.41634,
+          0.59916,
+          2.90394
+        ],
+        "size": [
+          2.83287,
+          0.80457,
+          2.90351
+        ]
+      },
+      "mesh_count": 11,
+      "armature_count": 1,
+      "vertex_count": 15997,
+      "polygon_count": 15927,
+      "objects": [
+        {
+          "name": "CultivatorArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "CultivatorArmature|CharacterArmature|Attack"
+          ]
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Hair",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Head",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Body",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Arms",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Boots",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Jian",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pants",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pauldron",
+          "type": "MESH",
+          "parent": "CultivatorArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Cultivator_Eyebrows",
+          "vertices": 558,
+          "polygons": 492,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.09827,
+              -0.09035,
+              2.67581
+            ],
+            "max": [
+              0.09808,
+              -0.0312,
+              2.72401
+            ],
+            "size": [
+              0.19635,
+              0.05915,
+              0.0482
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "vertices": 388,
+          "polygons": 384,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.07686,
+              -0.06855,
+              2.65807
+            ],
+            "max": [
+              0.07668,
+              -0.02224,
+              2.70523
+            ],
+            "size": [
+              0.15354,
+              0.04631,
+              0.04716
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Hair",
+          "vertices": 695,
+          "polygons": 669,
+          "materials": [
+            "Wendao_Hair"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.14182,
+              -0.09422,
+              2.66859
+            ],
+            "max": [
+              0.13444,
+              0.18253,
+              2.90394
+            ],
+            "size": [
+              0.27626,
+              0.27675,
+              0.23535
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Head",
+          "vertices": 1593,
+          "polygons": 1592,
+          "materials": [
+            "Wendao_Skin"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.25854,
+              -0.11635,
+              2.17767
+            ],
+            "max": [
+              0.25835,
+              0.30927,
+              2.85725
+            ],
+            "size": [
+              0.51689,
+              0.42562,
+              0.67958
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Body",
+          "vertices": 1988,
+          "polygons": 1954,
+          "materials": [
+            "Wendao_Robe"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.58816,
+              -0.13897,
+              1.45775
+            ],
+            "max": [
+              0.58798,
+              0.34896,
+              2.46131
+            ],
+            "size": [
+              1.17614,
+              0.48793,
+              1.00356
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "vertices": 1896,
+          "polygons": 1838,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.18789,
+              0.04871,
+              2.18391
+            ],
+            "max": [
+              1.18771,
+              0.28099,
+              2.39383
+            ],
+            "size": [
+              2.3756,
+              0.23228,
+              0.20992
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Arms",
+          "vertices": 2482,
+          "polygons": 2466,
+          "materials": [
+            "Wendao_RangerCloth",
+            "Wendao_Skin"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.41652,
+              0.01266,
+              2.15902
+            ],
+            "max": [
+              1.41634,
+              0.26492,
+              2.41695
+            ],
+            "size": [
+              2.83287,
+              0.25226,
+              0.25793
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Boots",
+          "vertices": 4672,
+          "polygons": 4902,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.28067,
+              -0.20541,
+              0.00043
+            ],
+            "max": [
+              0.28049,
+              0.32543,
+              0.88294
+            ],
+            "size": [
+              0.56116,
+              0.53084,
+              0.88251
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Jian",
+          "vertices": 452,
+          "polygons": 370,
+          "materials": [
+            "Wendao_Steel"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.38109,
+              0.19923,
+              0.78882
+            ],
+            "max": [
+              0.82348,
+              0.59916,
+              2.0593
+            ],
+            "size": [
+              1.20457,
+              0.39994,
+              1.27048
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pants",
+          "vertices": 581,
+          "polygons": 572,
+          "materials": [
+            "Wendao_RobeDark"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.33306,
+              -0.06267,
+              0.64141
+            ],
+            "max": [
+              0.33287,
+              0.29743,
+              1.66608
+            ],
+            "size": [
+              0.66593,
+              0.3601,
+              1.02468
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pauldron",
+          "vertices": 692,
+          "polygons": 688,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "CultivatorArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              0.19802,
+              0.0018,
+              2.27026
+            ],
+            "max": [
+              0.56542,
+              0.33203,
+              2.48627
+            ],
+            "size": [
+              0.3674,
+              0.33023,
+              0.21601
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "CultivatorArmature",
+          "bones": 44,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Fist.L",
+            "Fist1.L",
+            "Fist2.L",
+            "Fist2.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Fist.R",
+            "Fist1.R",
+            "Fist2.R",
+            "Fist2.R_end",
+            "Weapon.R",
+            "Weapon.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "CultivatorArmature|CharacterArmature|Attack"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "CultivatorArmature|CharacterArmature|Attack",
+          "frame_range": [
+            1.0,
+            21.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Attack2",
+          "frame_range": [
+            1.0,
+            21.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Idle_Attacking",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|PickUp",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|RecieveHit_Attacking",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Roll",
+          "frame_range": [
+            1.0,
+            25.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CultivatorArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Characters/NpcGuard_Modular.fbx",
+      "file_size_bytes": 5003068,
+      "bounds": {
+        "min": [
+          -1.36905,
+          -1.15162,
+          0.00044
+        ],
+        "max": [
+          1.36905,
+          0.34388,
+          2.80683
+        ],
+        "size": [
+          2.73811,
+          1.4955,
+          2.80639
+        ]
+      },
+      "mesh_count": 13,
+      "armature_count": 1,
+      "vertex_count": 16630,
+      "polygon_count": 16574,
+      "objects": [
+        {
+          "name": "ModularGuardArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "ModularGuardArmature|CharacterArmature|Bow_Attack_Draw"
+          ]
+        },
+        {
+          "name": "Cultivator_Body",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_1",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pauldron",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Arms",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pants",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Boots",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Hair",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_2",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Head",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        },
+        {
+          "name": "Modular_Guard_Bow",
+          "type": "MESH",
+          "parent": "ModularGuardArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Cultivator_Body",
+          "vertices": 1540,
+          "polygons": 1501,
+          "materials": [
+            "Wendao_RangerCloth"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.32676,
+              -0.16906,
+              1.38943
+            ],
+            "max": [
+              0.32676,
+              0.34388,
+              2.44154
+            ],
+            "size": [
+              0.65352,
+              0.51294,
+              1.05212
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_1",
+          "vertices": 413,
+          "polygons": 407,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.22581,
+              -0.17338,
+              1.80816
+            ],
+            "max": [
+              0.22054,
+              0.20691,
+              1.88754
+            ],
+            "size": [
+              0.44635,
+              0.38029,
+              0.07938
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pauldron",
+          "vertices": 692,
+          "polygons": 688,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              0.19149,
+              -0.02436,
+              2.19435
+            ],
+            "max": [
+              0.5466,
+              0.29482,
+              2.40313
+            ],
+            "size": [
+              0.35511,
+              0.31918,
+              0.20879
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Arms",
+          "vertices": 2482,
+          "polygons": 2466,
+          "materials": [
+            "Wendao_RangerCloth",
+            "Wendao_Skin"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.36905,
+              -0.01386,
+              2.08682
+            ],
+            "max": [
+              1.36905,
+              0.22996,
+              2.33613
+            ],
+            "size": [
+              2.73811,
+              0.24382,
+              0.24931
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pants",
+          "vertices": 590,
+          "polygons": 580,
+          "materials": [
+            "Wendao_RangerCloth"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.27853,
+              -0.08133,
+              0.64977
+            ],
+            "max": [
+              0.27853,
+              0.26478,
+              1.60693
+            ],
+            "size": [
+              0.55706,
+              0.34611,
+              0.95717
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "vertices": 1896,
+          "polygons": 1838,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.14807,
+              0.02098,
+              2.11088
+            ],
+            "max": [
+              1.14807,
+              0.24549,
+              2.31378
+            ],
+            "size": [
+              2.29614,
+              0.22451,
+              0.2029
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Boots",
+          "vertices": 4672,
+          "polygons": 4902,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.27119,
+              -0.22464,
+              0.00044
+            ],
+            "max": [
+              0.27119,
+              0.28845,
+              0.85343
+            ],
+            "size": [
+              0.54239,
+              0.51308,
+              0.85299
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Hair",
+          "vertices": 695,
+          "polygons": 669,
+          "materials": [
+            "Wendao_Hair"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.13699,
+              -0.11716,
+              2.57935
+            ],
+            "max": [
+              0.13003,
+              0.15033,
+              2.80683
+            ],
+            "size": [
+              0.26702,
+              0.26749,
+              0.22748
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "vertices": 388,
+          "polygons": 384,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.0742,
+              -0.09235,
+              2.56919
+            ],
+            "max": [
+              0.0742,
+              -0.0476,
+              2.61477
+            ],
+            "size": [
+              0.14841,
+              0.04476,
+              0.04558
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "vertices": 558,
+          "polygons": 492,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.09489,
+              -0.11342,
+              2.58633
+            ],
+            "max": [
+              0.09489,
+              -0.05625,
+              2.63292
+            ],
+            "size": [
+              0.18978,
+              0.05717,
+              0.04659
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_2",
+          "vertices": 413,
+          "polygons": 407,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.23529,
+              -0.17764,
+              1.71938
+            ],
+            "max": [
+              0.22583,
+              0.21524,
+              1.80138
+            ],
+            "size": [
+              0.46113,
+              0.39288,
+              0.08201
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Head",
+          "vertices": 1593,
+          "polygons": 1592,
+          "materials": [
+            "Wendao_Skin"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.25409,
+              -0.14068,
+              2.10485
+            ],
+            "max": [
+              0.25409,
+              0.27495,
+              2.76171
+            ],
+            "size": [
+              0.50817,
+              0.41562,
+              0.65685
+            ]
+          }
+        },
+        {
+          "name": "Modular_Guard_Bow",
+          "vertices": 698,
+          "polygons": 648,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularGuardArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.11928,
+              -1.15162,
+              0.40432
+            ],
+            "max": [
+              0.49037,
+              0.21323,
+              1.25903
+            ],
+            "size": [
+              1.60965,
+              1.36486,
+              0.8547
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "ModularGuardArmature",
+          "bones": 44,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Fist.L",
+            "Fist1.L",
+            "Fist2.L",
+            "Fist2.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Fist.R",
+            "Fist1.R",
+            "Fist2.R",
+            "Fist2.R_end",
+            "Weapon.R",
+            "Weapon.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "ModularGuardArmature|CharacterArmature|Bow_Attack_Draw"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Bow_Attack_Draw",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Bow_Attack_Shoot",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Idle_Attacking",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Idle_Weapon",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|PickUp",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|RecieveHit_Attacking",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Roll",
+          "frame_range": [
+            1.0,
+            25.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Run_Holding",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularGuardArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Characters/NpcHealer_Modular.fbx",
+      "file_size_bytes": 4571996,
+      "bounds": {
+        "min": [
+          -1.42253,
+          -1.6832,
+          -0.00327
+        ],
+        "max": [
+          1.41349,
+          0.58452,
+          2.90347
+        ],
+        "size": [
+          2.83601,
+          2.26772,
+          2.90674
+        ]
+      },
+      "mesh_count": 9,
+      "armature_count": 1,
+      "vertex_count": 10695,
+      "polygon_count": 10333,
+      "objects": [
+        {
+          "name": "ModularHealerArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "ModularHealerArmature|CharacterArmature|Attack_Idle"
+          ]
+        },
+        {
+          "name": "Cultivator_Hair",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Arms",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Body",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Boots",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Head",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pants",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        },
+        {
+          "name": "Modular_Healer_Staff",
+          "type": "MESH",
+          "parent": "ModularHealerArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Cultivator_Hair",
+          "vertices": 695,
+          "polygons": 669,
+          "materials": [
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.14641,
+              -0.08633,
+              2.66786
+            ],
+            "max": [
+              0.13016,
+              0.19072,
+              2.90347
+            ],
+            "size": [
+              0.27657,
+              0.27706,
+              0.23561
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "vertices": 388,
+          "polygons": 384,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.08138,
+              -0.06064,
+              2.65733
+            ],
+            "max": [
+              0.07234,
+              -0.01428,
+              2.70454
+            ],
+            "size": [
+              0.15371,
+              0.04636,
+              0.04721
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Arms",
+          "vertices": 2482,
+          "polygons": 2466,
+          "materials": [
+            "Wendao_RangerCloth",
+            "Wendao_Skin"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.42253,
+              0.02067,
+              2.15772
+            ],
+            "max": [
+              1.41349,
+              0.2732,
+              2.41594
+            ],
+            "size": [
+              2.83601,
+              0.25254,
+              0.25822
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Body",
+          "vertices": 1988,
+          "polygons": 1954,
+          "materials": [
+            "Wendao_Robe"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.59324,
+              -0.13113,
+              1.45567
+            ],
+            "max": [
+              0.5842,
+              0.35734,
+              2.46034
+            ],
+            "size": [
+              1.17744,
+              0.48847,
+              1.00467
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Boots",
+          "vertices": 1374,
+          "polygons": 1296,
+          "materials": [
+            "Wendao_RobeDark"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.28092,
+              -0.19765,
+              -0.00327
+            ],
+            "max": [
+              0.27188,
+              0.32262,
+              0.70972
+            ],
+            "size": [
+              0.5528,
+              0.52027,
+              0.71298
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "vertices": 558,
+          "polygons": 492,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.10281,
+              -0.08246,
+              2.67508
+            ],
+            "max": [
+              0.09376,
+              -0.02325,
+              2.72334
+            ],
+            "size": [
+              0.19657,
+              0.05921,
+              0.04826
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Head",
+          "vertices": 1593,
+          "polygons": 1592,
+          "materials": [
+            "Wendao_Skin"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.2624,
+              -0.10849,
+              2.1764
+            ],
+            "max": [
+              0.25336,
+              0.3176,
+              2.85673
+            ],
+            "size": [
+              0.51576,
+              0.42609,
+              0.68034
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pants",
+          "vertices": 581,
+          "polygons": 572,
+          "materials": [
+            "Wendao_RobeDark"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.33786,
+              -0.05475,
+              0.63842
+            ],
+            "max": [
+              0.32881,
+              0.30575,
+              1.66424
+            ],
+            "size": [
+              0.66667,
+              0.3605,
+              1.02581
+            ]
+          }
+        },
+        {
+          "name": "Modular_Healer_Staff",
+          "vertices": 1036,
+          "polygons": 908,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularHealerArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.88343,
+              -1.6832,
+              0.35958
+            ],
+            "max": [
+              -0.35709,
+              0.58452,
+              1.40687
+            ],
+            "size": [
+              0.52635,
+              2.26772,
+              1.04729
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "ModularHealerArmature",
+          "bones": 44,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Fist.L",
+            "Fist1.L",
+            "Fist2.L",
+            "Fist2.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Fist.R",
+            "Fist1.R",
+            "Fist2.R",
+            "Fist2.R_end",
+            "Weapon.R",
+            "Weapon.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "ModularHealerArmature|CharacterArmature|Attack_Idle"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Attack_Idle",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Idle_Weapon",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|PickUp",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|RecieveHit_Attacking",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Roll",
+          "frame_range": [
+            1.0,
+            25.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Run_Weapon",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Spell1",
+          "frame_range": [
+            1.0,
+            30.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Spell2",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Staff_Attack",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHealerArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Characters/NpcHermit_Modular.fbx",
+      "file_size_bytes": 4588156,
+      "bounds": {
+        "min": [
+          -1.44041,
+          -0.87208,
+          -0.00331
+        ],
+        "max": [
+          1.44041,
+          1.09494,
+          2.94936
+        ],
+        "size": [
+          2.88082,
+          1.96702,
+          2.95266
+        ]
+      },
+      "mesh_count": 9,
+      "armature_count": 1,
+      "vertex_count": 10451,
+      "polygon_count": 10124,
+      "objects": [
+        {
+          "name": "ModularHermitArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "ModularHermitArmature|CharacterArmature|Death"
+          ]
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Body",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Arms",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Boots",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Head",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pants",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Modular_Hermit_Staff",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Hair",
+          "type": "MESH",
+          "parent": "ModularHermitArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Cultivator_Eyes",
+          "vertices": 388,
+          "polygons": 384,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.07807,
+              -0.08289,
+              2.69933
+            ],
+            "max": [
+              0.07807,
+              -0.0358,
+              2.74728
+            ],
+            "size": [
+              0.15614,
+              0.04709,
+              0.04796
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "vertices": 558,
+          "polygons": 492,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.09984,
+              -0.10505,
+              2.71736
+            ],
+            "max": [
+              0.09984,
+              -0.04491,
+              2.76638
+            ],
+            "size": [
+              0.19968,
+              0.06015,
+              0.04902
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Body",
+          "vertices": 1988,
+          "polygons": 1954,
+          "materials": [
+            "Wendao_Robe"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.59802,
+              -0.1545,
+              1.47868
+            ],
+            "max": [
+              0.59802,
+              0.34169,
+              2.49923
+            ],
+            "size": [
+              1.19605,
+              0.49619,
+              1.02055
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Arms",
+          "vertices": 2482,
+          "polygons": 2466,
+          "materials": [
+            "Wendao_RangerCloth",
+            "Wendao_Skin"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.44041,
+              -0.0003,
+              2.19182
+            ],
+            "max": [
+              1.44041,
+              0.25623,
+              2.45412
+            ],
+            "size": [
+              2.88082,
+              0.25653,
+              0.2623
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Boots",
+          "vertices": 1374,
+          "polygons": 1296,
+          "materials": [
+            "Wendao_RobeDark"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.28077,
+              -0.22206,
+              -0.00331
+            ],
+            "max": [
+              0.28077,
+              0.30643,
+              0.72094
+            ],
+            "size": [
+              0.56154,
+              0.52849,
+              0.72425
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Head",
+          "vertices": 1593,
+          "polygons": 1592,
+          "materials": [
+            "Wendao_Skin"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.27011,
+              -0.13596,
+              2.21079
+            ],
+            "max": [
+              0.27011,
+              0.30579,
+              2.90188
+            ],
+            "size": [
+              0.54022,
+              0.44175,
+              0.69109
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pants",
+          "vertices": 581,
+          "polygons": 572,
+          "materials": [
+            "Wendao_RobeDark"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.3386,
+              -0.07691,
+              0.64852
+            ],
+            "max": [
+              0.3386,
+              0.28929,
+              1.69054
+            ],
+            "size": [
+              0.6772,
+              0.3662,
+              1.04202
+            ]
+          }
+        },
+        {
+          "name": "Modular_Hermit_Staff",
+          "vertices": 792,
+          "polygons": 699,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.03497,
+              -0.87208,
+              0.59455
+            ],
+            "max": [
+              0.02937,
+              1.09494,
+              1.24086
+            ],
+            "size": [
+              1.06435,
+              1.96702,
+              0.64631
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Hair",
+          "vertices": 695,
+          "polygons": 669,
+          "materials": [
+            "Wendao_Hair"
+          ],
+          "parent": "ModularHermitArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.14413,
+              -0.106,
+              2.71028
+            ],
+            "max": [
+              0.13681,
+              0.17244,
+              2.94936
+            ],
+            "size": [
+              0.28094,
+              0.27844,
+              0.23907
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "ModularHermitArmature",
+          "bones": 44,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Fist.L",
+            "Fist1.L",
+            "Fist2.L",
+            "Fist2.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Fist.R",
+            "Fist1.R",
+            "Fist2.R",
+            "Fist2.R_end",
+            "Weapon.R",
+            "Weapon.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "ModularHermitArmature|CharacterArmature|Death"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Idle_Attacking",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Idle_Weapon",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|PickUp",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|RecieveHit_Attacking",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Roll",
+          "frame_range": [
+            1.0,
+            25.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Run_Weapon",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Spell1",
+          "frame_range": [
+            1.0,
+            30.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Spell2",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Staff_Attack",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularHermitArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Characters/Bandit_Modular.fbx",
+      "file_size_bytes": 4556044,
+      "bounds": {
+        "min": [
+          -1.39768,
+          -1.53122,
+          -0.00326
+        ],
+        "max": [
+          1.39768,
+          0.36793,
+          2.90115
+        ],
+        "size": [
+          2.79536,
+          1.89914,
+          2.90441
+        ]
+      },
+      "mesh_count": 13,
+      "armature_count": 1,
+      "vertex_count": 16744,
+      "polygon_count": 16654,
+      "objects": [
+        {
+          "name": "ModularBanditArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "ModularBanditArmature|CharacterArmature|Attacking_Idle"
+          ]
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_1",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Arms",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Boots",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Body",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_2",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Hood",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Head",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Pants",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Modular_Bandit_Dagger",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        },
+        {
+          "name": "Cultivator_Hair",
+          "type": "MESH",
+          "parent": "ModularBanditArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Cultivator_Ranger_Body_Belt_1",
+          "vertices": 413,
+          "polygons": 407,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.23054,
+              -0.16015,
+              1.84226
+            ],
+            "max": [
+              0.22515,
+              0.22809,
+              1.92329
+            ],
+            "size": [
+              0.45568,
+              0.38824,
+              0.08104
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Bracers",
+          "vertices": 1896,
+          "polygons": 1838,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.17207,
+              0.03827,
+              2.1513
+            ],
+            "max": [
+              1.17207,
+              0.26748,
+              2.35845
+            ],
+            "size": [
+              2.34415,
+              0.2292,
+              0.20714
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Arms",
+          "vertices": 2482,
+          "polygons": 2466,
+          "materials": [
+            "Wendao_RangerCloth",
+            "Wendao_Skin"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.39768,
+              0.00271,
+              2.12675
+            ],
+            "max": [
+              1.39768,
+              0.25162,
+              2.38126
+            ],
+            "size": [
+              2.79536,
+              0.24892,
+              0.25452
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Boots",
+          "vertices": 4672,
+          "polygons": 4902,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.27686,
+              -0.21248,
+              -0.00326
+            ],
+            "max": [
+              0.27686,
+              0.31133,
+              0.86756
+            ],
+            "size": [
+              0.55373,
+              0.52381,
+              0.87083
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Body",
+          "vertices": 1540,
+          "polygons": 1501,
+          "materials": [
+            "Wendao_RangerCloth"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.33359,
+              -0.15574,
+              1.41477
+            ],
+            "max": [
+              0.33359,
+              0.36793,
+              2.48888
+            ],
+            "size": [
+              0.66718,
+              0.52367,
+              1.07412
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Ranger_Body_Belt_2",
+          "vertices": 413,
+          "polygons": 407,
+          "materials": [
+            "Wendao_RangerLeather"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.24021,
+              -0.1645,
+              1.75162
+            ],
+            "max": [
+              0.23056,
+              0.23659,
+              1.83534
+            ],
+            "size": [
+              0.47077,
+              0.40109,
+              0.08372
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyebrows",
+          "vertices": 558,
+          "polygons": 492,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.09688,
+              -0.09894,
+              2.63669
+            ],
+            "max": [
+              0.09688,
+              -0.04058,
+              2.68426
+            ],
+            "size": [
+              0.19375,
+              0.05836,
+              0.04756
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Hood",
+          "vertices": 1070,
+          "polygons": 1068,
+          "materials": [
+            "Wendao_RangerCloth"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.23563,
+              -0.1713,
+              2.37323
+            ],
+            "max": [
+              0.23563,
+              0.34852,
+              2.90115
+            ],
+            "size": [
+              0.47126,
+              0.51983,
+              0.52792
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Head",
+          "vertices": 1593,
+          "polygons": 1592,
+          "materials": [
+            "Wendao_Skin"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.26834,
+              -0.13109,
+              2.14515
+            ],
+            "max": [
+              0.26834,
+              0.30188,
+              2.81574
+            ],
+            "size": [
+              0.53668,
+              0.43297,
+              0.67058
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Eyes",
+          "vertices": 388,
+          "polygons": 384,
+          "materials": [
+            "Wendao_Eye",
+            "Wendao_Hair"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.07576,
+              -0.07743,
+              2.61919
+            ],
+            "max": [
+              0.07575,
+              -0.03174,
+              2.66573
+            ],
+            "size": [
+              0.15151,
+              0.04569,
+              0.04653
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Pants",
+          "vertices": 590,
+          "polygons": 580,
+          "materials": [
+            "Wendao_RangerCloth"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.28436,
+              -0.06618,
+              0.65964
+            ],
+            "max": [
+              0.28436,
+              0.28717,
+              1.63682
+            ],
+            "size": [
+              0.56871,
+              0.35335,
+              0.97718
+            ]
+          }
+        },
+        {
+          "name": "Modular_Bandit_Dagger",
+          "vertices": 434,
+          "polygons": 348,
+          "materials": [
+            "Wendao_Steel"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.89889,
+              -1.53122,
+              0.6995
+            ],
+            "max": [
+              0.09254,
+              -0.96934,
+              1.61578
+            ],
+            "size": [
+              0.99144,
+              0.56188,
+              0.91628
+            ]
+          }
+        },
+        {
+          "name": "Cultivator_Hair",
+          "vertices": 695,
+          "polygons": 669,
+          "materials": [
+            "Wendao_Hair"
+          ],
+          "parent": "ModularBanditArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.13985,
+              -0.10566,
+              2.62579
+            ],
+            "max": [
+              0.13275,
+              0.17033,
+              2.86181
+            ],
+            "size": [
+              0.2726,
+              0.27599,
+              0.23601
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "ModularBanditArmature",
+          "bones": 44,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Fist.L",
+            "Fist1.L",
+            "Fist2.L",
+            "Fist2.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Fist.R",
+            "Fist1.R",
+            "Fist2.R",
+            "Fist2.R_end",
+            "Weapon.R",
+            "Weapon.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "ModularBanditArmature|CharacterArmature|Attacking_Idle"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Attacking_Idle",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Dagger_Attack",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Dagger_Attack2",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            76.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|PickUp",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|RecieveHit_2",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Roll",
+          "frame_range": [
+            1.0,
+            25.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            22.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "ModularBanditArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Creatures/Wolf.fbx",
+      "file_size_bytes": 3501740,
+      "bounds": {
+        "min": [
+          -0.5326,
+          -2.56119,
+          -0.0102
+        ],
+        "max": [
+          0.5326,
+          2.9919,
+          2.67081
+        ],
+        "size": [
+          1.0652,
+          5.55309,
+          2.68101
+        ]
+      },
+      "mesh_count": 1,
+      "armature_count": 1,
+      "vertex_count": 983,
+      "polygon_count": 1016,
+      "objects": [
+        {
+          "name": "AnimalArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "AnimalArmature|Attack"
+          ]
+        },
+        {
+          "name": "Wolf",
+          "type": "MESH",
+          "parent": "AnimalArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Wolf",
+          "vertices": 983,
+          "polygons": 1016,
+          "materials": [
+            "Main",
+            "Nose",
+            "Main_Light",
+            "Eyes_Black"
+          ],
+          "parent": "AnimalArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.5326,
+              -2.56119,
+              -0.0102
+            ],
+            "max": [
+              0.5326,
+              2.9919,
+              2.67081
+            ],
+            "size": [
+              1.0652,
+              5.55309,
+              2.68101
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "AnimalArmature",
+          "bones": 67,
+          "bone_names": [
+            "Body",
+            "Back",
+            "Torso",
+            "Torso2",
+            "Torso3",
+            "Neck1",
+            "Neck2",
+            "Neck3",
+            "Head",
+            "Head_end",
+            "Ear1.L",
+            "Ear2.L",
+            "Ear3.L",
+            "Ear4.L",
+            "Ear4.L_end",
+            "Ear1.R",
+            "Ear2.R",
+            "Ear3.R",
+            "Ear4.R",
+            "Ear4.R_end",
+            "FrontShoulder.L",
+            "FrontUpperLeg.L",
+            "FrontLowerLeg.L",
+            "FrontLowerLeg.L_end",
+            "FrontShoulder.R",
+            "FrontUpperLeg.R",
+            "FrontLowerLeg.R",
+            "FrontLowerLeg.R_end",
+            "BackShoulder.L",
+            "BackLeg.L",
+            "BackUpperLeg.L",
+            "BackLowerLeg.L",
+            "BackLowerLeg.L_end",
+            "BackShoulder.R",
+            "BackLeg.R",
+            "BackUpperLeg.R",
+            "BackLowerLeg.R",
+            "BackLowerLeg.R_end",
+            "Tail1",
+            "Tail2",
+            "Tail3",
+            "Tail4",
+            "Tail5",
+            "Tail6",
+            "Tail7",
+            "Tail8",
+            "Tail8_end",
+            "PoleTargetBack.L",
+            "PoleTargetBack.L_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "PoleTargetBack.R",
+            "PoleTargetBack.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end",
+            "IKBackLeg.L",
+            "FFB.L",
+            "FFB.L_end",
+            "IKFrontLeg.L",
+            "FF.L",
+            "FF.L_end",
+            "IKBackLeg.R",
+            "FFB.R",
+            "FFB.R_end",
+            "IKFrontLeg.R",
+            "FF.R",
+            "FF.R_end"
+          ],
+          "animations": [
+            "AnimalArmature|Attack"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "AnimalArmature|Attack",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Death",
+          "frame_range": [
+            1.0,
+            33.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Eating",
+          "frame_range": [
+            1.0,
+            77.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Gallop",
+          "frame_range": [
+            1.0,
+            18.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Gallop_Jump",
+          "frame_range": [
+            1.0,
+            29.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Idle",
+          "frame_range": [
+            1.0,
+            101.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Idle_2",
+          "frame_range": [
+            1.0,
+            101.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Idle_2_HeadLow",
+          "frame_range": [
+            1.0,
+            121.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Idle_HitReact_Left",
+          "frame_range": [
+            1.0,
+            21.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Idle_HitReact_Right",
+          "frame_range": [
+            1.0,
+            21.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Jump_ToIdle",
+          "frame_range": [
+            1.0,
+            41.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "AnimalArmature|Walk",
+          "frame_range": [
+            1.0,
+            33.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Creatures/StoneGeneral.fbx",
+      "file_size_bytes": 4936796,
+      "bounds": {
+        "min": [
+          -2.33931,
+          -1.21226,
+          -0.01516
+        ],
+        "max": [
+          2.35141,
+          0.80182,
+          3.31901
+        ],
+        "size": [
+          4.69072,
+          2.01408,
+          3.33418
+        ]
+      },
+      "mesh_count": 11,
+      "armature_count": 1,
+      "vertex_count": 4705,
+      "polygon_count": 4297,
+      "objects": [
+        {
+          "name": "StoneGeneralArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "StoneGeneralArmature|CharacterArmature|Death"
+          ]
+        },
+        {
+          "name": "StoneGeneral_Forearm_L",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Body",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Eye_L",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Eye_R",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Shoulder_L",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Core",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_ChestPlate",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Crown",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Forearm_R",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Shoulder_R",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        },
+        {
+          "name": "StoneGeneral_Maul",
+          "type": "MESH",
+          "parent": "StoneGeneralArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "StoneGeneral_Forearm_L",
+          "vertices": 96,
+          "polygons": 60,
+          "materials": [
+            "StoneGeneral_Stone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              1.31467,
+              0.05399,
+              1.6545
+            ],
+            "max": [
+              1.64724,
+              0.43491,
+              2.02338
+            ],
+            "size": [
+              0.33257,
+              0.38092,
+              0.36889
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Body",
+          "vertices": 3322,
+          "polygons": 3180,
+          "materials": [
+            "StoneGeneral_Stone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -2.33931,
+              -0.73023,
+              -0.01516
+            ],
+            "max": [
+              2.35141,
+              0.64591,
+              3.31901
+            ],
+            "size": [
+              4.69072,
+              1.37614,
+              3.33418
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Eye_L",
+          "vertices": 42,
+          "polygons": 80,
+          "materials": [
+            "StoneGeneral_Jade"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.22672,
+              -0.70959,
+              2.37537
+            ],
+            "max": [
+              -0.07455,
+              -0.63959,
+              2.49537
+            ],
+            "size": [
+              0.15217,
+              0.07,
+              0.12
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Eye_R",
+          "vertices": 42,
+          "polygons": 80,
+          "materials": [
+            "StoneGeneral_Jade"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              0.07328,
+              -0.70959,
+              2.37537
+            ],
+            "max": [
+              0.22545,
+              -0.63959,
+              2.49537
+            ],
+            "size": [
+              0.15217,
+              0.07,
+              0.12
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Shoulder_L",
+          "vertices": 132,
+          "polygons": 72,
+          "materials": [
+            "StoneGeneral_DarkStone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.14524,
+              0.15778,
+              1.7508
+            ],
+            "max": [
+              0.58694,
+              0.79109,
+              1.99415
+            ],
+            "size": [
+              0.73218,
+              0.63331,
+              0.24335
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Core",
+          "vertices": 42,
+          "polygons": 80,
+          "materials": [
+            "StoneGeneral_Jade"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.13379,
+              -0.42601,
+              1.06575
+            ],
+            "max": [
+              0.13251,
+              -0.30601,
+              1.36575
+            ],
+            "size": [
+              0.2663,
+              0.12,
+              0.3
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_ChestPlate",
+          "vertices": 132,
+          "polygons": 72,
+          "materials": [
+            "StoneGeneral_DarkStone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.38064,
+              -0.31601,
+              1.31575
+            ],
+            "max": [
+              0.37936,
+              -0.13601,
+              1.93575
+            ],
+            "size": [
+              0.76,
+              0.18,
+              0.62
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Crown",
+          "vertices": 76,
+          "polygons": 37,
+          "materials": [
+            "StoneGeneral_DarkStone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.21479,
+              -0.24715,
+              2.35504
+            ],
+            "max": [
+              0.25955,
+              0.20999,
+              3.08998
+            ],
+            "size": [
+              0.47435,
+              0.45714,
+              0.73493
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Forearm_R",
+          "vertices": 96,
+          "polygons": 60,
+          "materials": [
+            "StoneGeneral_Stone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -1.64724,
+              0.05399,
+              1.64701
+            ],
+            "max": [
+              -1.31467,
+              0.43491,
+              2.0159
+            ],
+            "size": [
+              0.33257,
+              0.38092,
+              0.36889
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Shoulder_R",
+          "vertices": 132,
+          "polygons": 72,
+          "materials": [
+            "StoneGeneral_DarkStone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -0.57658,
+              0.15954,
+              1.73409
+            ],
+            "max": [
+              0.13489,
+              0.80182,
+              1.97843
+            ],
+            "size": [
+              0.71147,
+              0.64228,
+              0.24434
+            ]
+          }
+        },
+        {
+          "name": "StoneGeneral_Maul",
+          "vertices": 593,
+          "polygons": 504,
+          "materials": [
+            "StoneGeneral_DarkStone"
+          ],
+          "parent": "StoneGeneralArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              1.38323,
+              -1.21226,
+              1.46908
+            ],
+            "max": [
+              2.09973,
+              0.53595,
+              2.17411
+            ],
+            "size": [
+              0.7165,
+              1.74821,
+              0.70502
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "StoneGeneralArmature",
+          "bones": 58,
+          "bone_names": [
+            "Root",
+            "Foot.L",
+            "Foot.L_end",
+            "Body",
+            "Hips",
+            "Abdomen",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Shoulder.L",
+            "UpperArm.L",
+            "LowerArm.L",
+            "Pinky1.L",
+            "Pinky2.L",
+            "Pinky3.L",
+            "Pinky3.L_end",
+            "Middle1.L",
+            "Middle2.L",
+            "Middle3.L",
+            "Middle3.L_end",
+            "Index1.L",
+            "Index2.L",
+            "Index3.L",
+            "Index3.L_end",
+            "Thumb1.L",
+            "Thumb2.L",
+            "Thumb2.L_end",
+            "Shoulder.R",
+            "UpperArm.R",
+            "LowerArm.R",
+            "Pinky1.R",
+            "Pinky2.R",
+            "Pinky3.R",
+            "Pinky3.R_end",
+            "Middle1.R",
+            "Middle2.R",
+            "Middle3.R",
+            "Middle3.R_end",
+            "Index1.R",
+            "Index2.R",
+            "Index3.R",
+            "Index3.R_end",
+            "Thumb1.R",
+            "Thumb2.R",
+            "Thumb2.R_end",
+            "UpperLeg.L",
+            "LowerLeg.L",
+            "LowerLeg.L_end",
+            "UpperLeg.R",
+            "LowerLeg.R",
+            "LowerLeg.R_end",
+            "PoleTarget.L",
+            "PoleTarget.L_end",
+            "Foot.R",
+            "Foot.R_end",
+            "PoleTarget.R",
+            "PoleTarget.R_end"
+          ],
+          "animations": [
+            "StoneGeneralArmature|CharacterArmature|Death"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            24.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Duck",
+          "frame_range": [
+            1.0,
+            51.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Idle",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Jump",
+          "frame_range": [
+            1.0,
+            12.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Jump_Idle",
+          "frame_range": [
+            1.0,
+            16.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Jump_Land",
+          "frame_range": [
+            1.0,
+            12.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|No",
+          "frame_range": [
+            1.0,
+            51.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            27.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|RecieveHit",
+          "frame_range": [
+            1.0,
+            19.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Run",
+          "frame_range": [
+            1.0,
+            18.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Walk",
+          "frame_range": [
+            1.0,
+            31.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Wave",
+          "frame_range": [
+            1.0,
+            51.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Weapon",
+          "frame_range": [
+            1.0,
+            27.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "StoneGeneralArmature|CharacterArmature|Yes",
+          "frame_range": [
+            1.0,
+            51.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    },
+    {
+      "asset": "Assets/_Project/Resources/Art/Budget/Creatures/Goleling_Evolved.fbx",
+      "file_size_bytes": 820204,
+      "bounds": {
+        "min": [
+          -2.19102,
+          -0.75603,
+          1.23981
+        ],
+        "max": [
+          2.19102,
+          1.4302,
+          3.80811
+        ],
+        "size": [
+          4.38204,
+          2.18623,
+          2.5683
+        ]
+      },
+      "mesh_count": 1,
+      "armature_count": 1,
+      "vertex_count": 3006,
+      "polygon_count": 2976,
+      "objects": [
+        {
+          "name": "CharacterArmature",
+          "type": "ARMATURE",
+          "parent": "",
+          "animations": [
+            "CharacterArmature|Death"
+          ]
+        },
+        {
+          "name": "Goleling_Evolved",
+          "type": "MESH",
+          "parent": "CharacterArmature",
+          "animations": []
+        }
+      ],
+      "meshes": [
+        {
+          "name": "Goleling_Evolved",
+          "vertices": 3006,
+          "polygons": 2976,
+          "materials": [
+            "Atlas"
+          ],
+          "parent": "CharacterArmature",
+          "animations": [],
+          "bounds": {
+            "min": [
+              -2.19102,
+              -0.75603,
+              1.23981
+            ],
+            "max": [
+              2.19102,
+              1.4302,
+              3.80811
+            ],
+            "size": [
+              4.38204,
+              2.18623,
+              2.5683
+            ]
+          }
+        }
+      ],
+      "armatures": [
+        {
+          "name": "CharacterArmature",
+          "bones": 17,
+          "bone_names": [
+            "Root",
+            "Torso",
+            "Neck",
+            "Head",
+            "Head_end",
+            "Wing1.L",
+            "Wing2.L",
+            "Wing3.L",
+            "Wing4.L",
+            "Wing4.L_end",
+            "Wing1.R",
+            "Wing2.R",
+            "Wing3.R",
+            "Wing4.R",
+            "Wing4.R_end",
+            "Body1",
+            "Body1_end"
+          ],
+          "animations": [
+            "CharacterArmature|Death"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "name": "CharacterArmature|Death",
+          "frame_range": [
+            1.0,
+            21.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|Fast_Flying",
+          "frame_range": [
+            1.0,
+            26.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|Flying_Idle",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|Headbutt",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|HitReact",
+          "frame_range": [
+            1.0,
+            15.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|No",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|Punch",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        },
+        {
+          "name": "CharacterArmature|Yes",
+          "frame_range": [
+            1.0,
+            36.0
+          ],
+          "channels": 0,
+          "slots": 1
+        }
+      ]
+    }
+  ]
+}

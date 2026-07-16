@@ -103,6 +103,18 @@ namespace Wendao.Entities.Player
 
             if (!IsGameplayRunning())
             {
+                if (!IsGameplayPaused())
+                {
+                    CancelAttackAndCombo(true);
+                }
+
+                return;
+            }
+
+            ResolveServices();
+            if (_inputSource != null && !_inputSource.IsEnabled)
+            {
+                CancelAttackAndCombo(true);
                 return;
             }
 
@@ -637,6 +649,11 @@ namespace Wendao.Entities.Player
         {
             GameManager gameManager = GameManager.Instance;
             return gameManager == null || gameManager.State == GameState.Playing;
+        }
+
+        private static bool IsGameplayPaused()
+        {
+            return GameManager.Instance?.State == GameState.Paused;
         }
     }
 }

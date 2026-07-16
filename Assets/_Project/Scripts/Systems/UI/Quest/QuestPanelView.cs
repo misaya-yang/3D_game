@@ -19,7 +19,8 @@ namespace Wendao.UI.Quest
         public const string DailyLocalizationKey = "ui_quest_daily";
         public const string DailyDefaultValue = "每日委托";
         public const string EmptyLocalizationKey = "ui_quest_panel_empty";
-        public const string EmptyDefaultValue = "暂无任务";
+        public const string EmptyDefaultValue =
+            "暂无任务。与带有任务标记的修士交谈可接取委托。";
         public const string ProgressLocalizationKey = "ui_quest_progress";
         public const string ProgressDefaultValue = "{0}  {1}/{2}";
         public const string ReadyLocalizationKey = "ui_quest_ready_turn_in";
@@ -373,6 +374,26 @@ namespace Wendao.UI.Quest
                 new Color(0.94f, 0.82f, 0.52f, 1f),
                 new Vector2(1180f, 60f),
                 new Vector2(0f, 390f));
+
+            RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "QuestListSectionPanel",
+                new Vector2(520f, 660f),
+                new Vector2(-360f, 0f),
+                true);
+            RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "QuestDetailSectionPanel",
+                new Vector2(650f, 660f),
+                new Vector2(300f, 0f),
+                true);
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "QuestTitleIcon",
+                "menuList",
+                new Vector2(38f, 38f),
+                new Vector2(-120f, 390f),
+                RuntimeUiTheme.GoldSoft);
 
             for (int index = 0; index < MaximumRows; index++)
             {

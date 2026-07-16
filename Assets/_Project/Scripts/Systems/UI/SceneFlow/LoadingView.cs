@@ -57,35 +57,56 @@ namespace Wendao.UI.SceneFlow
             Image background = RuntimeUiFactory.CreateImage(
                 canvas.transform,
                 "Background",
-                new Color(0.035f, 0.05f, 0.047f, 1f),
+                Color.white,
                 Vector2.zero,
                 Vector2.one,
                 Vector2.zero,
                 Vector2.zero);
             RuntimeUiFactory.Stretch(background.rectTransform);
+            background.sprite = RuntimeUiTheme.MainMenuBackground;
+            background.type = Image.Type.Simple;
 
-            RuntimeUiFactory.CreateText(
+            Image atmosphere = RuntimeUiFactory.CreateImage(
                 background.transform,
+                "LoadingAtmosphere",
+                new Color(0.012f, 0.025f, 0.022f, 0.66f),
+                Vector2.zero,
+                Vector2.one,
+                Vector2.zero,
+                Vector2.zero);
+            RuntimeUiFactory.Stretch(atmosphere.rectTransform);
+
+            Image panel = RuntimeUiFactory.CreatePanel(
+                atmosphere.transform,
+                "LoadingPanel",
+                new Vector2(980f, 230f),
+                new Vector2(0f, -315f));
+            panel.color = new Color(0.22f, 0.32f, 0.26f, 0.94f);
+
+            Text loadingLabel = RuntimeUiFactory.CreateText(
+                panel.transform,
                 "LoadingLabel",
                 LoadingDefaultValue,
-                34,
-                new Color(0.86f, 0.81f, 0.61f, 1f),
-                new Vector2(700f, 60f),
-                new Vector2(0f, 70f));
+                36,
+                RuntimeUiTheme.Gold,
+                new Vector2(820f, 58f),
+                new Vector2(0f, 68f));
+            RuntimeUiTheme.StyleText(loadingLabel, RuntimeUiTextRole.Title);
 
             Image track = RuntimeUiFactory.CreateImage(
-                background.transform,
+                panel.transform,
                 "ProgressTrack",
-                new Color(0.13f, 0.17f, 0.15f, 1f),
+                RuntimeUiTheme.SurfaceInset,
                 new Vector2(0.5f, 0.5f),
                 new Vector2(0.5f, 0.5f),
-                new Vector2(640f, 26f),
-                Vector2.zero);
+                new Vector2(800f, 34f),
+                new Vector2(0f, 2f));
+            RuntimeUiTheme.StylePanel(track, true);
 
             ProgressFill = RuntimeUiFactory.CreateImage(
                 track.transform,
                 "ProgressFill",
-                new Color(0.49f, 0.66f, 0.48f, 1f),
+                RuntimeUiTheme.JadeBright,
                 Vector2.zero,
                 Vector2.one,
                 Vector2.zero,
@@ -97,13 +118,13 @@ namespace Wendao.UI.SceneFlow
             ProgressFill.fillAmount = 0f;
 
             ProgressText = RuntimeUiFactory.CreateText(
-                background.transform,
+                panel.transform,
                 "ProgressText",
                 string.Format(ProgressDefaultFormat, 0),
-                24,
-                new Color(0.82f, 0.86f, 0.80f, 1f),
+                22,
+                RuntimeUiTheme.Parchment,
                 new Vector2(220f, 48f),
-                new Vector2(0f, -55f));
+                new Vector2(0f, -62f));
             HandleProgressChanged(0f);
         }
 

@@ -43,6 +43,7 @@ namespace Wendao.Systems.World
             EnsureLandmarks(root.transform);
             EnsureGatherables(root.transform);
             EnsureChests(root.transform);
+            EnsureNavigation(root);
         }
 
         private static void EnsureGround(Transform root)
@@ -111,7 +112,7 @@ namespace Wendao.Systems.World
             }
 
             ring.localPosition = new Vector3(0f, 0.08f, 0f);
-            ring.localScale = new Vector3(1.3f, 0.08f, 1.3f);
+            ring.localScale = new Vector3(0.86f, 0.035f, 0.86f);
             Collider ringCollider = ring.GetComponent<Collider>();
             if (ringCollider != null)
             {
@@ -120,7 +121,7 @@ namespace Wendao.Systems.World
 
             ApplyMaterial(
                 ring.GetComponent<Renderer>(),
-                new Color(0.3f, 0.75f, 0.8f, 1f),
+                new Color(0.08f, 0.24f, 0.22f, 1f),
                 "mat_cangwu_teleport");
         }
 
@@ -399,6 +400,17 @@ namespace Wendao.Systems.World
             }
 
             return null;
+        }
+
+        private static void EnsureNavigation(GameObject root)
+        {
+            CangwuNavigationSurface surface =
+                root.GetComponent<CangwuNavigationSurface>()
+                ?? root.AddComponent<CangwuNavigationSurface>();
+            if (!surface.IsBuilt)
+            {
+                surface.Rebuild();
+            }
         }
 
         private static Transform FindChildRecursive(Transform current, string objectName)

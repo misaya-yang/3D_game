@@ -773,10 +773,19 @@ namespace Wendao.Entities.Player
 
         private void HandleDamageApplied(DamageInfo info)
         {
-            if (info.Amount > 0f && info.Source == gameObject)
+            if (info.Amount > 0f
+                && (IsPlayerActor(info.Source) || IsPlayerActor(info.Target)))
             {
                 RegisterCombatActivity();
             }
+        }
+
+        private bool IsPlayerActor(GameObject actor)
+        {
+            return actor != null
+                && (actor.transform == transform
+                    || actor.transform.IsChildOf(transform)
+                    || transform.IsChildOf(actor.transform));
         }
 
         private void HandleSkillCast(SkillCastInfo info)

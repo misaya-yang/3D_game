@@ -56,6 +56,8 @@ namespace Wendao.UI.Common
         private Text _confirmMessage;
         private Action _confirmYes;
         private Action _confirmNo;
+        private Button _confirmYesButton;
+        private bool _baseHudVisible = true;
 
         public bool HasOpenPanel
         {
@@ -156,6 +158,7 @@ namespace Wendao.UI.Common
 
             ReconcileExternalPanelOpen();
             ReconcileGameplayInput();
+            ApplyHudState();
         }
 
         public void ShowPanel(string panelId)
@@ -181,6 +184,8 @@ namespace Wendao.UI.Common
             ApplyPanelState(panelId, true);
             ReconcileGameplayInput();
             SnapshotOpenPanels();
+            ApplyHudState();
+            RuntimeUiTheme.FocusFirstSelectable(GetPanelObject(panelId));
         }
 
         public void HidePanel(string panelId)
@@ -201,6 +206,7 @@ namespace Wendao.UI.Common
 
             ReconcileGameplayInput();
             SnapshotOpenPanels();
+            ApplyHudState();
         }
 
         public void HideAllPanels()
@@ -214,6 +220,7 @@ namespace Wendao.UI.Common
             HidePause();
             ReconcileGameplayInput();
             SnapshotOpenPanels();
+            ApplyHudState();
         }
 
         public bool IsPanelOpen(string panelId)
@@ -286,6 +293,12 @@ namespace Wendao.UI.Common
 
             if (IsPanelOpen(UiPanelIds.Pause))
             {
+                PausePanelView pause = Find<PausePanelView>();
+                if (pause != null && pause.TryCloseSubpanel())
+                {
+                    return;
+                }
+
                 HidePanel(UiPanelIds.Pause);
                 return;
             }
@@ -320,15 +333,14 @@ namespace Wendao.UI.Common
             _confirmNo = onNo;
             SetCanvasGroup(_confirmGroup, true);
             ReconcileGameplayInput();
+            ApplyHudState();
+            RuntimeUiTheme.Focus(_confirmYesButton);
         }
 
         public void SetHudVisible(bool visible)
         {
-            SetViewEnabled<CombatStatusHudView>(visible);
-            SetViewEnabled<CultivationHudView>(visible);
-            SetViewEnabled<SkillQuickbarView>(visible);
-            SetViewEnabled<QuestTrackerView>(visible);
-            SetViewEnabled<BossHealthBarView>(visible);
+            _baseHudVisible = visible;
+            ApplyHudState();
         }
 
         private void ShowPause()
@@ -352,6 +364,9 @@ namespace Wendao.UI.Common
             Time.timeScale = 0f;
             _ownsPause = true;
             Find<PausePanelView>()?.SetOpen(true);
+            ApplyHudState();
+            RuntimeUiTheme.FocusFirstSelectable(
+                Find<PausePanelView>()?.gameObject);
         }
 
         private void HidePause()
@@ -374,6 +389,7 @@ namespace Wendao.UI.Common
             }
 
             _ownsPause = false;
+            ApplyHudState();
         }
 
         private void ApplyPanelState(string panelId, bool open)
@@ -439,6 +455,8 @@ namespace Wendao.UI.Common
             if (!string.IsNullOrEmpty(winner))
             {
                 HideAllExcept(winner);
+                ApplyHudState();
+                RuntimeUiTheme.FocusFirstSelectable(GetPanelObject(winner));
             }
 
             SnapshotOpenPanels();
@@ -555,6 +573,7 @@ namespace Wendao.UI.Common
                 new Vector2(150f, -90f));
             yes.onClick.AddListener(() => CloseConfirm(true));
             no.onClick.AddListener(() => CloseConfirm(false));
+            _confirmYesButton = yes;
             SetCanvasGroup(_confirmGroup, false);
         }
 
@@ -571,6 +590,7 @@ namespace Wendao.UI.Common
             SetCanvasGroup(_confirmGroup, false);
             callback?.Invoke();
             ReconcileGameplayInput();
+            ApplyHudState();
         }
 
         private static Button CreateButton(
@@ -621,9 +641,73 @@ namespace Wendao.UI.Common
             where T : Behaviour
         {
             T view = Find<T>();
-            if (view != null)
+            if (view == null)
             {
-                view.gameObject.SetActive(visible);
+                return;
+            }
+
+            // Keep the view behaviour alive while hiding its render/input
+            // surface. Event subscriptions and cached text stay synchronized,
+            // and the HUD returns with current values after a modal closes.
+            Canvas[] canvases = view.GetComponentsInChildren<Canvas>(true);
+            for (int index = 0; index < canvases.Length; index++)
+            {
+                canvases[index].enabled = visible;
+            }
+
+            GraphicRaycaster[] raycasters =
+                view.GetComponentsInChildren<GraphicRaycaster>(true);
+            for (int index = 0; index < raycasters.Length; index++)
+            {
+                raycasters[index].enabled = visible;
+            }
+        }
+
+        private void ApplyHudState()
+        {
+            bool panelOpen = HasOpenPanel;
+            GameManager gameManager = GameManager.Instance;
+            bool gameplayHudState = gameManager == null
+                || gameManager.State == GameState.Playing;
+            bool showCommon = _baseHudVisible
+                && gameplayHudState
+                && !panelOpen;
+            SetViewEnabled<CombatStatusHudView>(showCommon);
+            SetViewEnabled<CultivationHudView>(showCommon);
+            SetViewEnabled<QuestTrackerView>(showCommon);
+            SetViewEnabled<QuestWorldMarkerView>(showCommon);
+            SetViewEnabled<LockOnMarkerView>(showCommon);
+            SetViewEnabled<BossHealthBarView>(showCommon);
+            SetViewEnabled<GameplayMenuBarView>(showCommon);
+
+            bool showQuickbar = _baseHudVisible
+                && gameplayHudState
+                && (!panelOpen || IsPanelOpen(UiPanelIds.Skill));
+            SetViewEnabled<SkillQuickbarView>(showQuickbar);
+        }
+
+        private static GameObject GetPanelObject(string panelId)
+        {
+            switch (panelId)
+            {
+                case UiPanelIds.Inventory:
+                    return Find<InventoryPanelView>()?.gameObject;
+                case UiPanelIds.Character:
+                    return Find<CharacterPanelView>()?.gameObject;
+                case UiPanelIds.Skill:
+                    return Find<SkillPanelView>()?.gameObject;
+                case UiPanelIds.Quest:
+                    return Find<QuestPanelView>()?.gameObject;
+                case UiPanelIds.Map:
+                    return Find<MapPanelView>()?.gameObject;
+                case UiPanelIds.Alchemy:
+                    return Find<AlchemyPanelView>()?.gameObject;
+                case UiPanelIds.Shop:
+                    return Find<ShopPanelView>()?.gameObject;
+                case UiPanelIds.Pause:
+                    return Find<PausePanelView>()?.gameObject;
+                default:
+                    return null;
             }
         }
     }

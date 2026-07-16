@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "design_reference": "docs/art/reference/player/player_wanderer_turnaround_v1.png",
+  "shared": {
+    "source_rig": "Assets/_Project/Resources/Art/Budget/Characters/Monk.fbx",
+    "source_body_names": [
+      "Monk"
+    ],
+    "source_remove_names": [
+      "Monk",
+      "Monk.001"
+    ],
+    "rig_name": "CharacterArmature",
+    "idle_action_suffix": "|Idle",
+    "target_source_height_ratio": 0.985,
+    "triangle_budget": {
+      "lod0": 52000,
+      "body": 26000,
+      "hair": 9000,
+      "outfit": 15000,
+      "accessories": 5000
+    },
+    "palette": {
+      "skin": {
+        "rgba": [0.55, 0.34, 0.23, 1.0],
+        "roughness": 0.62,
+        "metallic": 0.0
+      },
+      "hair": {
+        "rgba": [0.012, 0.016, 0.02, 1.0],
+        "roughness": 0.48,
+        "metallic": 0.0
+      },
+      "eye_white": {
+        "rgba": [0.82, 0.78, 0.68, 1.0],
+        "roughness": 0.32,
+        "metallic": 0.0
+      },
+      "eye_dark": {
+        "rgba": [0.018, 0.012, 0.008, 1.0],
+        "roughness": 0.28,
+        "metallic": 0.0
+      },
+      "robe_blue": {
+        "rgba": [0.20, 0.29, 0.32, 1.0],
+        "roughness": 0.86,
+        "metallic": 0.0
+      },
+      "robe_blue_dark": {
+        "rgba": [0.105, 0.17, 0.19, 1.0],
+        "roughness": 0.9,
+        "metallic": 0.0
+      },
+      "linen": {
+        "rgba": [0.54, 0.51, 0.44, 1.0],
+        "roughness": 0.92,
+        "metallic": 0.0
+      },
+      "pants": {
+        "rgba": [0.035, 0.045, 0.052, 1.0],
+        "roughness": 0.91,
+        "metallic": 0.0
+      },
+      "leather": {
+        "rgba": [0.075, 0.052, 0.038, 1.0],
+        "roughness": 0.76,
+        "metallic": 0.0
+      },
+      "leather_worn": {
+        "rgba": [0.18, 0.12, 0.075, 1.0],
+        "roughness": 0.8,
+        "metallic": 0.0
+      },
+      "bronze": {
+        "rgba": [0.38, 0.22, 0.085, 1.0],
+        "roughness": 0.48,
+        "metallic": 0.58
+      },
+      "steel": {
+        "rgba": [0.34, 0.39, 0.41, 1.0],
+        "roughness": 0.38,
+        "metallic": 0.72
+      },
+      "jade": {
+        "rgba": [0.08, 0.28, 0.19, 1.0],
+        "roughness": 0.34,
+        "metallic": 0.08,
+        "emission": [0.012, 0.04, 0.025, 1.0],
+        "emission_strength": 0.18
+      }
+    }
+  },
+  "profiles": {
+    "cultivator": {
+      "display_name": "Young Wandering Cultivator",
+      "macro": {
+        "gender": 1.0,
+        "age": 0.27,
+        "muscle": 0.56,
+        "weight": 0.39,
+        "height": 0.67,
+        "proportions": 0.72,
+        "african": 0.0,
+        "asian": 1.0,
+        "caucasian": 0.0
+      },
+      "detail_targets": [
+        {
+          "path": "head/head-oval.target.gz",
+          "weight": 0.24
+        },
+        {
+          "path": "head/head-scale-horiz-decr.target.gz",
+          "weight": 0.12
+        },
+        {
+          "path": "chin/chin-width-decr.target.gz",
+          "weight": 0.22
+        },
+        {
+          "path": "chin/chin-height-decr.target.gz",
+          "weight": 0.09
+        },
+        {
+          "path": "nose/nose-scale-horiz-decr.target.gz",
+          "weight": 0.16
+        },
+        {
+          "path": "nose/nose-volume-decr.target.gz",
+          "weight": 0.08
+        },
+        {
+          "path": "eyes/l-eye-epicanthus-in.target.gz",
+          "weight": 0.18
+        },
+        {
+          "path": "eyes/r-eye-epicanthus-in.target.gz",
+          "weight": 0.18
+        },
+        {
+          "path": "torso/torso-vshape-incr.target.gz",
+          "weight": 0.12
+        }
+      ],
+      "geometry": {
+        "body_decimate_ratio": 0.86,
+        "cloth_offset": 0.012,
+        "outer_cloth_offset": 0.022,
+        "cloth_thickness": 0.008,
+        "hair_bevel": 0.0075,
+        "hair_clump_count": 7,
+        "belt_radius": 0.012,
+        "wrap_radius": 0.004
+      },
+      "output": {
+        "blend": "ArtSource/Characters/Player/Cultivator_Mpfb_v1.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/Cultivator_Mpfb_v1.fbx",
+        "manifest": "ArtSource/Characters/Player/Cultivator_Mpfb_v1_manifest.json",
+        "preview": "docs/art/previews/g09-07/mpfb/01-cultivator-mpfb-v1.png"
+      }
+    }
+  }
+}

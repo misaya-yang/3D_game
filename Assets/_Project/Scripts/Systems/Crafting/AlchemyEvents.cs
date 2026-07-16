@@ -2,6 +2,7 @@ namespace Wendao.Systems.Crafting
 {
     public static class AlchemyEvents
     {
+        public const string FurnaceInteracted = "OnAlchemyFurnaceInteracted";
         public const string CraftCompleted = "OnCraftCompleted";
         public const string CraftFailed = "OnCraftFailed";
     }

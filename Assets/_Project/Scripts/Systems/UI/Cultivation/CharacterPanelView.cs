@@ -374,6 +374,24 @@ namespace Wendao.UI.Cultivation
                 new Vector2(860f, 64f),
                 new Vector2(0f, 382f));
 
+            RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "CharacterCultivationSectionPanel",
+                new Vector2(440f, 230f),
+                new Vector2(-245f, 205f),
+                true);
+            RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "CharacterBodySectionPanel",
+                new Vector2(440f, 230f),
+                new Vector2(245f, 205f),
+                true);
+            RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "CharacterStatsSectionPanel",
+                new Vector2(880f, 285f),
+                new Vector2(0f, -82f),
+                true);
             _realmLabel = CreateInfoText(
                 panel.transform,
                 "CharacterRealm",
@@ -441,6 +459,7 @@ namespace Wendao.UI.Cultivation
                 size,
                 position);
             text.alignment = TextAnchor.MiddleLeft;
+            RuntimeUiTheme.StyleText(text, RuntimeUiTextRole.Body);
             return text;
         }
 

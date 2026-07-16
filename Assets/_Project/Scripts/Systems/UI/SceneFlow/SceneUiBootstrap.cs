@@ -78,6 +78,14 @@ namespace Wendao.UI.SceneFlow
             }
 
             if (isGameplayScene
+                && Object.FindAnyObjectByType<GameplayMenuBarView>(
+                    FindObjectsInactive.Include) == null)
+            {
+                new GameObject("GameplayMenuBarView")
+                    .AddComponent<GameplayMenuBarView>();
+            }
+
+            if (isGameplayScene
                 && Object.FindAnyObjectByType<DamageFloatingTextView>(
                     FindObjectsInactive.Include) == null)
             {
@@ -91,6 +99,14 @@ namespace Wendao.UI.SceneFlow
             {
                 new GameObject("BossHealthBarView")
                     .AddComponent<BossHealthBarView>();
+            }
+
+            if (isGameplayScene
+                && Object.FindAnyObjectByType<LockOnMarkerView>(
+                    FindObjectsInactive.Include) == null)
+            {
+                new GameObject("LockOnMarkerView")
+                    .AddComponent<LockOnMarkerView>();
             }
 
             if (isGameplayScene
@@ -198,6 +214,14 @@ namespace Wendao.UI.SceneFlow
                     FindObjectsInactive.Include) == null)
             {
                 new GameObject("QuestTrackerView").AddComponent<QuestTrackerView>();
+            }
+
+            if (isGameplayScene
+                && Object.FindAnyObjectByType<QuestWorldMarkerView>(
+                    FindObjectsInactive.Include) == null)
+            {
+                new GameObject("QuestWorldMarkerView")
+                    .AddComponent<QuestWorldMarkerView>();
             }
 
             if (isGameplayScene

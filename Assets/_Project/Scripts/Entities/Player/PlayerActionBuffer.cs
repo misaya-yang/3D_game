@@ -62,12 +62,18 @@ namespace Wendao.Entities.Player
                 return;
             }
 
-            TickBuffer(Time.unscaledDeltaTime);
             if (_inputSource == null)
             {
                 ServiceLocator.TryGet(out _inputSource);
             }
 
+            if (_inputSource != null && !_inputSource.IsEnabled)
+            {
+                Clear();
+                return;
+            }
+
+            TickBuffer(Time.unscaledDeltaTime);
             CaptureInputSnapshot();
         }
 

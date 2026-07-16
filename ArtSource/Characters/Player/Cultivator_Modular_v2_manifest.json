@@ -1,0 +1,223 @@
+{
+  "schema_version": 2,
+  "name": "Young Wandering Cultivator Modular v2",
+  "profile": "cultivator",
+  "generator": "tools/blender/quaternius_character_pipeline.py",
+  "blender_version": "5.2.0 LTS",
+  "licenses": {
+    "universal_base_characters": "CC0-1.0",
+    "modular_character_outfits_fantasy": "CC0-1.0",
+    "quaternius_animation_rig": "CC0-1.0",
+    "project_assembly_and_palette": "project-owned"
+  },
+  "source_packages": {
+    "universal_base_characters": {
+      "version": "Standard 2025-12-16",
+      "license": "CC0-1.0",
+      "sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+      "url": "https://quaternius.com/packs/universalbasecharacters.html"
+    },
+    "modular_character_outfits_fantasy": {
+      "version": "Standard 2026-01-29",
+      "license": "CC0-1.0",
+      "sha256": "c3468b18871cc8c8f05ab14df7712baf22cb9f389cbd870babf130e595187f70",
+      "url": "https://quaternius.com/packs/modularcharacteroutfitsfantasy.html"
+    }
+  },
+  "sources": {
+    "design_reference": "docs/art/reference/player/player_wanderer_turnaround_v1.png",
+    "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Monk.fbx",
+    "weapon_source": "Assets/_Project/Resources/Art/Budget/Characters/Warrior.fbx",
+    "selected_files": [
+      {
+        "path": "base/Hair_SimpleParted.fbx",
+        "sha256": "7612975d40a7520f5a3ca4df19685a88da37ecd3e5c7d10b198a2265baf98047"
+      },
+      {
+        "path": "base/Superhero_Male_FullBody.fbx",
+        "sha256": "79344418d754a59730b79d1874752e9592143db34abe8adf138fa9a92a4768e9"
+      },
+      {
+        "path": "outfit/Male_Peasant_Body.fbx",
+        "sha256": "d875b268f63ddf884257a6f7c7a8c20b48f3aafa30363755a6115963b1a17349"
+      },
+      {
+        "path": "outfit/Male_Peasant_Legs.fbx",
+        "sha256": "547c90e8c7440cc149ebc5164ec0fda2cf2be0470cdf53816401545be0337abd"
+      },
+      {
+        "path": "outfit/Male_Ranger_Acc_Pauldron.fbx",
+        "sha256": "b0d28af472710870e654286682059c0aaa89bda7af316cccc520ea45dfd8cb68"
+      },
+      {
+        "path": "outfit/Male_Ranger_Arms.fbx",
+        "sha256": "1f8171fa29e8ad0d4290f2d9c7d99b6dead8a79987140db3b220c3b62ee8cd0b"
+      },
+      {
+        "path": "outfit/Male_Ranger_Feet_Boots.fbx",
+        "sha256": "e60d0f0eae8a9791dce407767991cc3b759f2f7660cd8eae5018e61f11e1aaef"
+      }
+    ]
+  },
+  "outputs": {
+    "blend": "ArtSource/Characters/Player/Cultivator_Modular_v2.blend",
+    "fbx": "Assets/_Project/Resources/Art/Budget/Characters/Cultivator.fbx",
+    "preview": "docs/art/previews/g09-07/final/01-cultivator-modular-v2.png"
+  },
+  "validation": {
+    "total_triangles": 30981,
+    "triangle_budget": 52000,
+    "bounds": {
+      "minimum": [
+        -1.416525,
+        -0.205409,
+        0.000427
+      ],
+      "maximum": [
+        1.416342,
+        0.599163,
+        2.90394
+      ],
+      "size": [
+        2.832867,
+        0.804572,
+        2.903513
+      ]
+    },
+    "ground_error": 0.0,
+    "bone_count": 44,
+    "actions": [
+      "CharacterArmature|Attack",
+      "CharacterArmature|Attack2",
+      "CharacterArmature|Death",
+      "CharacterArmature|Idle",
+      "CharacterArmature|Idle_Attacking",
+      "CharacterArmature|PickUp",
+      "CharacterArmature|RecieveHit",
+      "CharacterArmature|RecieveHit_Attacking",
+      "CharacterArmature|Roll",
+      "CharacterArmature|Run",
+      "CharacterArmature|Walk"
+    ],
+    "objects": [
+      {
+        "name": "Cultivator_Arms",
+        "vertices": 2482,
+        "polygons": 2466,
+        "triangles": 4928,
+        "materials": [
+          "Wendao_RangerCloth",
+          "Wendao_Skin"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Body",
+        "vertices": 1988,
+        "polygons": 1954,
+        "triangles": 3856,
+        "materials": [
+          "Wendao_Robe"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Boots",
+        "vertices": 4672,
+        "polygons": 4902,
+        "triangles": 9172,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Bracers",
+        "vertices": 1896,
+        "polygons": 1838,
+        "triangles": 3636,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Eyebrows",
+        "vertices": 558,
+        "polygons": 492,
+        "triangles": 984,
+        "materials": [
+          "Wendao_Eye",
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Eyes",
+        "vertices": 388,
+        "polygons": 384,
+        "triangles": 768,
+        "materials": [
+          "Wendao_Eye",
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Hair",
+        "vertices": 695,
+        "polygons": 669,
+        "triangles": 1301,
+        "materials": [
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Head",
+        "vertices": 1593,
+        "polygons": 1592,
+        "triangles": 3136,
+        "materials": [
+          "Wendao_Skin"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Jian",
+        "vertices": 452,
+        "polygons": 370,
+        "triangles": 712,
+        "materials": [
+          "Wendao_Steel"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Pants",
+        "vertices": 581,
+        "polygons": 572,
+        "triangles": 1112,
+        "materials": [
+          "Wendao_RobeDark"
+        ],
+        "deform_groups": 27
+      },
+      {
+        "name": "Cultivator_Pauldron",
+        "vertices": 692,
+        "polygons": 688,
+        "triangles": 1376,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 27
+      }
+    ]
+  },
+  "hashes": {
+    "blend_sha256": "f78cbc928b8e07af8e2ac00143905bea69ff60a83f3fdfef15db215b583f0518",
+    "fbx_sha256": "eea810856da7538b86f8f9c7ea89881037bebf52f2f3270d4cdcc569bd083144",
+    "preview_sha256": "3b89de3985b7cbc89f2d20339fad2b3f72359020d6985553b81dbcb2ff8639ca"
+  }
+}

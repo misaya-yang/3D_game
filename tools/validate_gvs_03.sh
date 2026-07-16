@@ -140,7 +140,7 @@ run_static_validation() {
     assert_pattern 'GetEquipmentStats\(\)' "${player_stats}"
 
     assert_json_binding OpenInventory '<Keyboard>/b'
-    assert_json_binding OpenInventory '<Gamepad>/selectButton'
+    assert_json_binding OpenInventory '<Gamepad>/select'
     assert_pattern 'bool OpenInventoryPressedThisFrame' "${input_contract}"
     assert_pattern '_openInventoryAction = _playerMap\.FindAction\("OpenInventory", true\)' "${input_reader}"
     assert_pattern 'CanReadUi\(_openInventoryAction\)' "${input_reader}"

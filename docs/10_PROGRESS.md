@@ -1,30 +1,39 @@
 # 10 · 开发进度（唯一恢复入口）
 
-> **更新时间**：2026-07-15  
+> **更新时间**：2026-07-16
 > **用途**：这里只记录“现在做到哪里、下一步是什么”。  
 > Goal 的范围、依赖和验收标准仍在 [`10_GOALS.md`](10_GOALS.md)；机制与数值仍以对应系统文档为准。
 
 ## 5 秒结论
 
-- **MVP Phase 0—7 已全部完成，没有待领取 Goal。**
-- 最终结果：EditMode 34/34、PlayMode 202/202、Metal 性能 1/1、macOS Release 与 Player 启动冒烟通过。
+- **MVP Phase 0—7、G08-03、`G09-01`—`G09-03` 与 `G09-07` 均已完成；`G09-04` 已完成代码与 5/5 目标回归并暂存为 `implemented`，当前推进 `G09-08` 三图美术第二轮。**
+- `G09-01` 最终门禁为目标 13/13、EditMode 34/34、PlayMode 212/212、macOS Release 构建和 Player 冒烟通过；19 张改造后截图覆盖 1280×720、1920×1080 与主菜单小窗口。
+- `G09-02` 最终门禁为目标 10/10、EditMode 34/34、PlayMode 216/216、134,663,203-byte macOS Release 和 Player 冒烟；三图前后对照与角色近景已入库。
+- `G09-03` 清偿 1 个 P0、4 个 P1，最终门禁为目标 5/5、EditMode 34/34、PlayMode 221/221、134,696,660-byte macOS Release、Boot smoke 与三次 55 步发布旅程。
+- `G09-04` 已修复战斗镜头接线、受击战斗态、Modal 动作残留与锁定标记，目标 5/5；全量/Release/Player 对照在角色与地图视觉轮后恢复并关账。
+- `G09-07` 已完成五个人形角色和石将军生产替换：目标 8/8、全量
+  EditMode 34/34、PlayMode 234/234、20 角色 Metal 门禁 4762.8fps /
+  253.1MiB、162,358,884-byte Release、Boot smoke 与单窗口 Player 证据通过。
+- 用户明确要求先解决“场景、角色丑”的主要观感问题；执行顺序临时调整为 `G09-08 → 回收 G09-04 → G09-05...`，仍保持同一时刻一个 Goal。
+- 全局优化从现在起遵守 [`12_GLOBAL_OPTIMIZATION_ROADMAP.md`](12_GLOBAL_OPTIMIZATION_ROADMAP.md)：每轮基线 → 冻结问题集 → 实现 → 同路径对照 → 门禁 → 关账，禁止跨轮盲改。
 - 最终签核和已知非阻断项见 [`history/MVP_RELEASE_SIGNOFF.md`](history/MVP_RELEASE_SIGNOFF.md)。
 - 历史 XML 与验证脚本见 [`history/TEST_EVIDENCE.md`](history/TEST_EVIDENCE.md)。
+- `G08-01` 证明 Blender→FBX 流水线；`G08-02` 已完成静态技术交付但未获视觉认可；`G08-03` 已用精选 CC0 与程序化兜底覆盖完整游戏。
 
 ## 现在从这里继续
 
 | 项 | 当前值 |
 |----|--------|
-| 当前 Goal | `G07-04` |
-| 名称 | MVP 总验收 |
-| 状态 | `done` |
-| 验收规格 | [`01_VISION_MVP.md`](01_VISION_MVP.md) §8、[`history/MVP_RELEASE_SIGNOFF.md`](history/MVP_RELEASE_SIGNOFF.md) |
-| 已落地 | 全新档十环主线/三图/死亡/存读档综合回归；全量 34/34 + 202/202；Universal macOS Release（约 114MiB）；Player 配置与 Boot 冒烟；所有 Goal 最终状态 `done` |
-| 未完成 | 无代码 MVP 阻断项 |
-| 下一动作 | 可直接试玩 `Builds/macOS/WendaoChangsheng.app`；后续正式美术、Developer ID/notarization 另开 Post-MVP Goal |
-| 后继选择 | 无；MVP 已完成 |
+| 当前 Goal | `G09-08` |
+| 名称 | 三图构图、生态与导航美术第二轮 |
+| 状态 | `in_progress` |
+| 验收规格 | [`10_GOALS.md`](10_GOALS.md) G09-08；[`01_VISION_MVP.md`](01_VISION_MVP.md) §5、§7；[`02_ARCHITECTURE.md`](02_ARCHITECTURE.md) §9；[`07_WORLD_ENEMY_QUEST.md`](07_WORLD_ENEMY_QUEST.md) §1—3；[`11_FANTASY_FEEL.md`](11_FANTASY_FEEL.md) §2—3 |
+| 已落地 | 已有 G08-03/G09-02 的三图 CC0 覆盖、导航修复和固定视角基线；G09-07 角色生产基线已签核，可作为地图构图的真实尺度参照 |
+| 未完成 | 青石村、苍梧山、黑风洞的路线、地标、密度、生态、重复率、遮挡、装饰碰撞、NavMesh、光雾与高密度性能第二轮审计和修复 |
+| 下一动作 | 读取 G09-08 refs，复用现有三图固定路线和视觉语言冻结问题集；优先通过参数化场景配置与批量审计修复构图、重复资产墙和导航视觉锚点 |
+| 验收证据 | 写入 G09-08 地图审计、三图同路径固定视角、导航采样、目标/全量回归、Metal 性能、Release 与 Player 冒烟 |
 
-若开启 Post-MVP 开发，按以下顺序读取：
+恢复全局优化时，按以下顺序读取：
 
 1. 本文件的“现在从这里继续”。
 2. 先新增一张范围明确的 Goal 卡片，再将它标为唯一 `in_progress`。
@@ -50,12 +59,23 @@
 | G07-02 | `done` | 内容密度、localization、经济闭区间和节拍预算已通过回归 |
 | G07-03 | `done` | 边界、性能与 3,600 模拟秒稳定性回归已通过 |
 | G07-04 | `done` | MVP 逐项签核、Release 构建和 Player 冒烟已通过 |
+| G08-01 | `done` | 30 分钟原型完成流水线验证，但视觉仅作为失败对照保留 |
+| G08-02 | `implemented` | v2 静态模型、FBX、五视图与统计已交付；未获视觉认可，按用户决定停止继续精修 |
+| G08-03 | `done` | CC0 精选低模全局覆盖、Unity 接入、34/34 + 205/205、macOS 构建/冒烟及三图 Player 截图通过 |
+| G09-01 | `done` | 全局 UI/交互重构、真实设置、导航与焦点、P0/P1 漏洞修复、34/34 + 212/212、构建/冒烟及 19 张改造后证据通过 |
+| G09-02 | `done` | 角色/敌人/三图第一轮精修、CC0 增量、相机/NavMesh/材质修复、目标 10/10、34/34 + 216/216、构建/冒烟和前后对照通过 |
+| G09-03 | `done` | 连续主线、世界标记、丹炉、手柄、窗口缩放、34/34 + 221/221、三次 55 步发布旅程均通过 |
+| G09-04 | `implemented` | 4 个 P1 代码修复与目标 5/5 已通过；全量/Release/Player 对照待视觉轮后恢复关账 |
+| G09-05—G09-06 | `pending` 2 | 任务/成长/引导与 UI 第二轮在角色、地图视觉优先轮后继续 |
+| G09-07 | `done` | 五个人形与石将军生产资产、材质、动作、目标 8/8、34/34 + 234/234、Metal、Release、Smoke 与 Player 证据通过 |
+| G09-08 | `in_progress` | 当前进行三图构图、生态、导航、美术重复率与性能第二轮 |
+| G09-09—G09-10 | `pending` 2 | 随后完成音画统一与最终签核 |
 
-所有 MVP Goal 均为 `done`。只有新的可复现回归失败或明确的 Post-MVP 范围才应重新开启开发。
+所有 MVP Goal、`G08-03`、`G09-01`—`G09-03` 与 `G09-07` 均为 `done`；`G08-02` 因未获视觉认可保持 `implemented` 历史事实，`G09-04` 因用户视觉优先调整暂为 `implemented`，当前唯一 `in_progress` 为 `G09-08`。
 
 ## 已知非阻断项
 
-- 正式美术替换、Apple Developer ID 签名/notarization 与真人主观手感复核不属于代码 MVP；详见最终签核。
+- 原创 4K 终稿、全量动作重定向、Apple Developer ID 签名/notarization 与真人主观手感复核不属于当前精修范围；详见 Goal 卡片。
 - 旧 90/97 记录已由最终 202/202 推翻并清偿。
 
 ## 更新规则
@@ -67,6 +87,6 @@
 3. 验收通过时记录测试结果文件；未运行 Unity 时最多标 `implemented`。
 4. 运行 `tools/check_docs_consistency.sh`；开发期只允许一个 `in_progress`，全量完成时允许零个。
 
-当前无后继 Goal；不得靠旧对话记忆猜测 Post-MVP 范围。
+用户已要求以“全局优化大纲、一轮一轮验收”为核心工作方式；轮次和总完成定义以 `12_GLOBAL_OPTIMIZATION_ROADMAP.md` 为准，仍严格保持唯一 `in_progress` Goal。
 
 若本文件与 Goal 卡片状态冲突，立即运行一致性检查并修正文档；不要猜测。

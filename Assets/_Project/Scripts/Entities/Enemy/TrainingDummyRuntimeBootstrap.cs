@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Wendao.Entities.Visuals;
 using Wendao.Systems.World;
 
 namespace Wendao.Entities.Enemy
@@ -44,7 +45,9 @@ namespace Wendao.Entities.Enemy
             dummyObject.transform.localScale = new Vector3(0.55f, 1f, 0.55f);
             SceneManager.MoveGameObjectToScene(dummyObject, scene);
             ApplyMaterial(dummyObject.GetComponent<Renderer>());
-            return dummyObject.AddComponent<TrainingDummy>();
+            TrainingDummy dummy = dummyObject.AddComponent<TrainingDummy>();
+            BudgetVisualFactory.AttachTrainingDummy(dummyObject);
+            return dummy;
         }
 
         private static void HandleSceneLoaded(Scene scene, LoadSceneMode mode)

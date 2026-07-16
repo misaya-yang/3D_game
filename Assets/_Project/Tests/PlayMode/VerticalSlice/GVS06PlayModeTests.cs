@@ -330,9 +330,15 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
                     Is.EqualTo(QuestStatus.Completed));
                 tracker.Refresh();
                 Assert.That(
+                    tracker.CurrentGuidanceKind,
+                    Is.EqualTo(MainQuestGuidanceKind.TurnIn));
+                Assert.That(
                     tracker.CurrentObjectiveLocalizationKey,
-                    Is.EqualTo(QuestTrackerView.ReadyTurnInLocalizationKey));
-                Assert.That(tracker.ObjectiveText, Is.EqualTo("目标已完成，可以交付"));
+                    Is.EqualTo(
+                        QuestTrackerView.TurnInGuidanceLocalizationKey));
+                Assert.That(
+                    tracker.ObjectiveText,
+                    Is.EqualTo("返回药老交付任务"));
 
                 Assert.That(npc.TryInteract(), Is.True);
                 Assert.That(
@@ -371,7 +377,13 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
             Assert.That(cultivation.SubStage, Is.EqualTo(rewardedSubStage));
             Assert.That(cultivation.CurrentXp, Is.EqualTo(rewardedXp).Within(0.001f));
             tracker.Refresh();
-            Assert.That(tracker.IsVisible, Is.False);
+            Assert.That(tracker.IsVisible, Is.True);
+            Assert.That(
+                tracker.CurrentQuestId,
+                Is.EqualTo(QuestContentIds.MainGatherQingxin));
+            Assert.That(
+                tracker.CurrentGuidanceKind,
+                Is.EqualTo(MainQuestGuidanceKind.Accept));
         }
 
         [Test]

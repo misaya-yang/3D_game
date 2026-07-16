@@ -20,6 +20,11 @@ namespace Wendao.UI.Inventory
         public const string EmptySlotDefaultValue = "空";
         public const string NoSelectionLocalizationKey = "ui_inventory_no_selection";
         public const string NoSelectionDefaultValue = "请选择物品";
+        public const string EmptyInventoryLocalizationKey = "ui_inventory_empty";
+        public const string EmptyInventoryDefaultValue =
+            "行囊尚空，可从采集、战斗和任务中获得物品。";
+        public const string CapacityLocalizationKey = "ui_inventory_capacity";
+        public const string CapacityDefaultValue = "行囊 {0}/{1}";
         public const string SelectedLocalizationKey = "ui_inventory_selected";
         public const string SelectedDefaultValue = "已选择：{0}";
         public const string StackCountLocalizationKey = "ui_inventory_stack_count";
@@ -36,6 +41,7 @@ namespace Wendao.UI.Inventory
 
         private CanvasGroup _canvasGroup;
         private Text _selectionText;
+        private Text _capacityText;
         private Button _useButton;
         private Button _equipButton;
         private Button _closeButton;
@@ -167,6 +173,7 @@ namespace Wendao.UI.Inventory
         public void Refresh()
         {
             ResolveServices();
+            int occupiedCount = 0;
             for (int index = 0; index < _slotLabels.Length; index++)
             {
                 InventorySlot slot = _inventory != null
@@ -177,7 +184,7 @@ namespace Wendao.UI.Inventory
                     ? null
                     : ConfigDatabase.Instance?.GetItem(slot.ItemId);
                 _slotLabels[index].text = item == null
-                    ? EmptySlotDefaultValue
+                    ? string.Empty
                     : slot.Count > 1
                         ? string.Format(
                             StackCountDefaultValue,
@@ -185,7 +192,16 @@ namespace Wendao.UI.Inventory
                             slot.Count)
                         : item.DisplayName;
                 _slotButtons[index].interactable = item != null;
+                if (item != null)
+                {
+                    occupiedCount++;
+                }
             }
+
+            _capacityText.text = string.Format(
+                CapacityDefaultValue,
+                occupiedCount,
+                InventoryManager.Capacity);
 
             if (_selectedSlot >= 0
                 && (_inventory == null
@@ -246,14 +262,32 @@ namespace Wendao.UI.Inventory
                 new Vector2(920f, 1000f),
                 Vector2.zero);
 
-            RuntimeUiFactory.CreateText(
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "InventoryIcon",
+                "shoppingBasket",
+                new Vector2(42f, 42f),
+                new Vector2(-110f, 445f),
+                RuntimeUiTheme.GoldSoft);
+            Text title = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "InventoryTitle",
                 TitleDefaultValue,
                 38,
-                new Color(0.88f, 0.82f, 0.62f, 1f),
+                RuntimeUiTheme.Gold,
                 new Vector2(760f, 60f),
                 new Vector2(0f, 445f));
+            RuntimeUiTheme.StyleText(title, RuntimeUiTextRole.Title);
+            _capacityText = RuntimeUiFactory.CreateText(
+                panel.transform,
+                "InventoryCapacity",
+                string.Format(CapacityDefaultValue, 0, InventoryManager.Capacity),
+                20,
+                RuntimeUiTheme.Muted,
+                new Vector2(220f, 40f),
+                new Vector2(300f, 445f));
+            _capacityText.alignment = TextAnchor.MiddleRight;
+            RuntimeUiTheme.StyleText(_capacityText, RuntimeUiTextRole.Muted);
 
             var gridObject = new GameObject(
                 "InventoryGrid",
@@ -390,12 +424,32 @@ namespace Wendao.UI.Inventory
             }
 
             _selectionText.text = selectedItem == null
-                ? NoSelectionDefaultValue
+                ? HasAnyItem()
+                    ? NoSelectionDefaultValue
+                    : EmptyInventoryDefaultValue
                 : string.Format(
                     SelectedDefaultValue,
                     selectedItem.DisplayName);
             _useButton.interactable = selectedItem?.Type == ItemType.Consumable;
             _equipButton.interactable = selectedItem?.Type == ItemType.Equipment;
+        }
+
+        private bool HasAnyItem()
+        {
+            if (_inventory?.Slots == null)
+            {
+                return false;
+            }
+
+            for (int index = 0; index < _inventory.Slots.Count; index++)
+            {
+                if (!_inventory.Slots[index].IsEmpty)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void ResolveServices()

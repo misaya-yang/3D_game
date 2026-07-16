@@ -231,6 +231,15 @@ namespace Wendao.Entities.Player
 
         public void SetEnabled(bool enabled)
         {
+            // Service consumers can briefly retain this interface while a scene
+            // unload destroys the component. Unity's overloaded null check is
+            // still available here and prevents native Behaviour access from
+            // throwing during shutdown.
+            if (this == null)
+            {
+                return;
+            }
+
             IsEnabled = enabled;
             if (_playerMap != null && isActiveAndEnabled)
             {
@@ -244,7 +253,8 @@ namespace Wendao.Entities.Player
             InputAction action,
             TutorialInputAction tutorialAction)
         {
-            return IsEnabled
+            return this != null
+                && IsEnabled
                 && isActiveAndEnabled
                 && action != null
                 && action.enabled
@@ -255,7 +265,8 @@ namespace Wendao.Entities.Player
             InputAction action,
             TutorialInputAction tutorialAction)
         {
-            return isActiveAndEnabled
+            return this != null
+                && isActiveAndEnabled
                 && action != null
                 && action.enabled
                 && IsAllowedByTutorial(tutorialAction);

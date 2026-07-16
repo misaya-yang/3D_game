@@ -1,0 +1,244 @@
+{
+  "schema_version": 2,
+  "name": "Blackwind Bandit Modular v1",
+  "profile": "human_enemy",
+  "generator": "tools/blender/quaternius_character_pipeline.py",
+  "blender_version": "5.2.0 LTS",
+  "licenses": {
+    "universal_base_characters": "CC0-1.0",
+    "modular_character_outfits_fantasy": "CC0-1.0",
+    "quaternius_animation_rig": "CC0-1.0",
+    "project_assembly_and_palette": "project-owned"
+  },
+  "source_packages": {
+    "universal_base_characters": {
+      "version": "Standard 2025-12-16",
+      "license": "CC0-1.0",
+      "sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+      "url": "https://quaternius.com/packs/universalbasecharacters.html"
+    },
+    "modular_character_outfits_fantasy": {
+      "version": "Standard 2026-01-29",
+      "license": "CC0-1.0",
+      "sha256": "c3468b18871cc8c8f05ab14df7712baf22cb9f389cbd870babf130e595187f70",
+      "url": "https://quaternius.com/packs/modularcharacteroutfitsfantasy.html"
+    }
+  },
+  "sources": {
+    "design_reference": "docs/art/reference/player/player_wanderer_turnaround_v1.png",
+    "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Rogue.fbx",
+    "weapon_source": null,
+    "selected_files": [
+      {
+        "path": "base/Hair_SimpleParted.fbx",
+        "sha256": "7612975d40a7520f5a3ca4df19685a88da37ecd3e5c7d10b198a2265baf98047"
+      },
+      {
+        "path": "base/Superhero_Male_FullBody.fbx",
+        "sha256": "79344418d754a59730b79d1874752e9592143db34abe8adf138fa9a92a4768e9"
+      },
+      {
+        "path": "outfit/Male_Ranger_Arms.fbx",
+        "sha256": "1f8171fa29e8ad0d4290f2d9c7d99b6dead8a79987140db3b220c3b62ee8cd0b"
+      },
+      {
+        "path": "outfit/Male_Ranger_Body.fbx",
+        "sha256": "9f5b7866170daa1d32a4652c0574188379d93b9889792e13edb3f2492fed444c"
+      },
+      {
+        "path": "outfit/Male_Ranger_Feet_Boots.fbx",
+        "sha256": "e60d0f0eae8a9791dce407767991cc3b759f2f7660cd8eae5018e61f11e1aaef"
+      },
+      {
+        "path": "outfit/Male_Ranger_Head_Hood.fbx",
+        "sha256": "c8b6f4e01b569176a5d91a7255bfc0eb45e83529b7e97eb4640c75db25f847f2"
+      },
+      {
+        "path": "outfit/Male_Ranger_Legs.fbx",
+        "sha256": "f1e30b2e4210086496ab2e18d107d4c163c8bde7ce72b10cd309cf5125540f63"
+      }
+    ]
+  },
+  "outputs": {
+    "blend": "ArtSource/Characters/Enemy/Bandit_Modular_v1.blend",
+    "fbx": "Assets/_Project/Resources/Art/Budget/Characters/Bandit_Modular.fbx",
+    "preview": null
+  },
+  "validation": {
+    "total_triangles": 32463,
+    "triangle_budget": 52000,
+    "bounds": {
+      "minimum": [
+        -1.397679,
+        -1.531217,
+        -0.003264
+      ],
+      "maximum": [
+        1.397679,
+        0.367928,
+        2.90115
+      ],
+      "size": [
+        2.795358,
+        1.899145,
+        2.904414
+      ]
+    },
+    "ground_error": 0.0,
+    "bone_count": 44,
+    "actions": [
+      "CharacterArmature|Attacking_Idle",
+      "CharacterArmature|Dagger_Attack",
+      "CharacterArmature|Dagger_Attack2",
+      "CharacterArmature|Death",
+      "CharacterArmature|Idle",
+      "CharacterArmature|PickUp",
+      "CharacterArmature|Punch",
+      "CharacterArmature|RecieveHit",
+      "CharacterArmature|RecieveHit_2",
+      "CharacterArmature|Roll",
+      "CharacterArmature|Run",
+      "CharacterArmature|Walk"
+    ],
+    "objects": [
+      {
+        "name": "Cultivator_Arms",
+        "vertices": 2482,
+        "polygons": 2466,
+        "triangles": 4928,
+        "materials": [
+          "Wendao_RangerCloth",
+          "Wendao_Skin"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Body",
+        "vertices": 1540,
+        "polygons": 1501,
+        "triangles": 2998,
+        "materials": [
+          "Wendao_RangerCloth"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Boots",
+        "vertices": 4672,
+        "polygons": 4902,
+        "triangles": 9172,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Bracers",
+        "vertices": 1896,
+        "polygons": 1838,
+        "triangles": 3636,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Eyebrows",
+        "vertices": 558,
+        "polygons": 492,
+        "triangles": 984,
+        "materials": [
+          "Wendao_Eye",
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Eyes",
+        "vertices": 388,
+        "polygons": 384,
+        "triangles": 768,
+        "materials": [
+          "Wendao_Eye",
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Hair",
+        "vertices": 695,
+        "polygons": 669,
+        "triangles": 1301,
+        "materials": [
+          "Wendao_Hair"
+        ],
+        "deform_groups": 1
+      },
+      {
+        "name": "Cultivator_Head",
+        "vertices": 1593,
+        "polygons": 1592,
+        "triangles": 3136,
+        "materials": [
+          "Wendao_Skin"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Hood",
+        "vertices": 1070,
+        "polygons": 1068,
+        "triangles": 2136,
+        "materials": [
+          "Wendao_RangerCloth"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Pants",
+        "vertices": 590,
+        "polygons": 580,
+        "triangles": 1128,
+        "materials": [
+          "Wendao_RangerCloth"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Ranger_Body_Belt_1",
+        "vertices": 413,
+        "polygons": 407,
+        "triangles": 804,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Cultivator_Ranger_Body_Belt_2",
+        "vertices": 413,
+        "polygons": 407,
+        "triangles": 804,
+        "materials": [
+          "Wendao_RangerLeather"
+        ],
+        "deform_groups": 28
+      },
+      {
+        "name": "Modular_Bandit_Dagger",
+        "vertices": 434,
+        "polygons": 348,
+        "triangles": 668,
+        "materials": [
+          "Wendao_Steel"
+        ],
+        "deform_groups": 0
+      }
+    ]
+  },
+  "hashes": {
+    "blend_sha256": "5e65e18fa8d41115ad9952e97ae23086a3742d19fa62e9ad071c3f0e73758307",
+    "fbx_sha256": "9b480c80e0f5c5965fea302a2e7d9303462291c661295308f7c18c54019f95b1",
+    "preview_sha256": null
+  }
+}

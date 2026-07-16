@@ -348,7 +348,17 @@ namespace Wendao.Systems.NPC
                 return;
             }
 
+            if (!IsInputAlive())
+            {
+                _input = null;
+            }
+
             if (_input == null && !ServiceLocator.TryGet(out _input))
+            {
+                return;
+            }
+
+            if (!IsInputAlive())
             {
                 return;
             }
@@ -365,13 +375,24 @@ namespace Wendao.Systems.NPC
                 return;
             }
 
-            if (_input != null && _inputWasEnabled)
+            if (IsInputAlive() && _inputWasEnabled)
             {
                 _input.SetEnabled(true);
+            }
+            else if (!IsInputAlive())
+            {
+                _input = null;
             }
 
             _inputSuspended = false;
             _inputWasEnabled = false;
+        }
+
+        private bool IsInputAlive()
+        {
+            return _input != null
+                && (!(_input is UnityEngine.Object unityObject)
+                    || unityObject != null);
         }
 
         private void HandleActiveSceneChanged(Scene previous, Scene next)

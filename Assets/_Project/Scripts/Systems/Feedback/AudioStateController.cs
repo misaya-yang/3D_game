@@ -189,6 +189,11 @@ namespace Wendao.Systems.Feedback
 
         private void ResolveAudio()
         {
+            if (_audio is UnityEngine.Object unityAudio && unityAudio == null)
+            {
+                _audio = null;
+            }
+
             if (_audio == null)
             {
                 ServiceLocator.TryGet(out _audio);

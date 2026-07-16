@@ -264,6 +264,13 @@ namespace Wendao.UI.Skill
                 new Color(0.88f, 0.82f, 0.62f, 1f),
                 new Vector2(760f, 58f),
                 new Vector2(0f, 350f));
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "SkillTitleIcon",
+                "target",
+                new Vector2(38f, 38f),
+                new Vector2(-105f, 350f),
+                RuntimeUiTheme.GoldSoft);
             RuntimeUiFactory.CreateText(
                 panel.transform,
                 "SkillPanelHelp",
@@ -272,6 +279,21 @@ namespace Wendao.UI.Skill
                 new Color(0.7f, 0.82f, 0.72f, 1f),
                 new Vector2(760f, 48f),
                 new Vector2(0f, 300f));
+
+            Image listSection = RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "SkillListSectionPanel",
+                new Vector2(740f, 500f),
+                new Vector2(0f, 55f),
+                true);
+            listSection.transform.SetAsFirstSibling();
+            Image selectionSection = RuntimeUiFactory.CreatePanel(
+                panel.transform,
+                "SkillSelectionSectionPanel",
+                new Vector2(740f, 70f),
+                new Vector2(0f, -235f),
+                true);
+            selectionSection.transform.SetAsFirstSibling();
 
             for (int index = 0; index < _skillButtons.Length; index++)
             {

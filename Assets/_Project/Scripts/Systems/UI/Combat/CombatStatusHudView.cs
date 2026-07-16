@@ -182,42 +182,47 @@ namespace Wendao.UI.Combat
                 transform,
                 "CombatStatusHudCanvas",
                 106);
-            Image panel = RuntimeUiFactory.CreateImage(
+            Image panel = RuntimeUiFactory.CreatePanel(
                 canvas.transform,
                 "CombatStatusPanel",
-                new Color(0.03f, 0.065f, 0.05f, 0.9f),
-                new Vector2(0f, 1f),
-                new Vector2(0f, 1f),
-                new Vector2(470f, 170f),
-                new Vector2(250f, -245f));
+                new Vector2(438f, 158f),
+                Vector2.zero);
+            panel.rectTransform.anchorMin = new Vector2(0f, 1f);
+            panel.rectTransform.anchorMax = new Vector2(0f, 1f);
+            panel.rectTransform.anchoredPosition = new Vector2(235f, -212f);
+            panel.color = new Color(0.08f, 0.14f, 0.115f, 0.88f);
             _nameLabel = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "PlayerName",
                 PlayerNameDefaultValue,
-                22,
-                new Color(0.92f, 0.83f, 0.58f, 1f),
-                new Vector2(210f, 34f),
-                new Vector2(-105f, 60f));
+                21,
+                RuntimeUiTheme.GoldSoft,
+                new Vector2(200f, 32f),
+                new Vector2(-103f, 54f));
+            _nameLabel.alignment = TextAnchor.MiddleLeft;
+            RuntimeUiTheme.StyleText(_nameLabel, RuntimeUiTextRole.Heading);
             _currencyLabel = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "Currency",
                 string.Format(CurrencyDefaultValue, 0),
-                21,
-                new Color(0.95f, 0.76f, 0.37f, 1f),
-                new Vector2(190f, 34f),
-                new Vector2(115f, 60f));
+                20,
+                RuntimeUiTheme.Gold,
+                new Vector2(180f, 32f),
+                new Vector2(112f, 54f));
+            _currencyLabel.alignment = TextAnchor.MiddleRight;
+            RuntimeUiTheme.StyleText(_currencyLabel, RuntimeUiTextRole.Accent);
             _hpFill = CreateBar(
                 panel.transform,
                 "Hp",
-                new Color(0.66f, 0.16f, 0.13f, 1f),
-                new Vector2(0f, 15f),
+                RuntimeUiTheme.Danger,
+                new Vector2(0f, 8f),
                 out _hpLabel,
                 string.Format(HpDefaultValue, 0f, 0f));
             _manaFill = CreateBar(
                 panel.transform,
                 "Mana",
-                new Color(0.15f, 0.48f, 0.72f, 1f),
-                new Vector2(0f, -42f),
+                RuntimeUiTheme.Mana,
+                new Vector2(0f, -43f),
                 out _manaLabel,
                 string.Format(ManaDefaultValue, 0f, 0f));
         }
@@ -233,11 +238,12 @@ namespace Wendao.UI.Combat
             Image background = RuntimeUiFactory.CreateImage(
                 parent,
                 name + "Background",
-                new Color(0.07f, 0.095f, 0.08f, 1f),
+                RuntimeUiTheme.SurfaceInset,
                 new Vector2(0.5f, 0.5f),
                 new Vector2(0.5f, 0.5f),
-                new Vector2(420f, 40f),
+                new Vector2(392f, 36f),
                 position);
+            RuntimeUiTheme.StylePanel(background, true);
             Image fill = RuntimeUiFactory.CreateImage(
                 background.transform,
                 name + "Fill",
@@ -254,10 +260,11 @@ namespace Wendao.UI.Combat
                 background.transform,
                 name + "Label",
                 defaultText,
-                19,
-                new Color(0.96f, 0.94f, 0.83f, 1f),
-                new Vector2(400f, 34f),
+                18,
+                RuntimeUiTheme.Parchment,
+                new Vector2(374f, 30f),
                 Vector2.zero);
+            RuntimeUiTheme.StyleText(label, RuntimeUiTextRole.Body);
             return fill;
         }
     }

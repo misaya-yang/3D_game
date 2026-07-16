@@ -83,6 +83,7 @@ Unity Editor 已打开并占用项目时，不循环启动 batchmode；先完成
 | [`10_GOALS.md`](10_GOALS.md) | 原子 Goal 范围、依赖、交付与验收卡片 | 由 `goal_status.sh` 定点读取 / 规划依赖 |
 | [`history/TEST_EVIDENCE.md`](history/TEST_EVIDENCE.md) | 历史 Unity XML、验证入口、G02 代码证据与验收债务 | 查证“是否真的做过”时 |
 | [`11_FANTASY_FEEL.md`](11_FANTASY_FEEL.md) | 仙侠气质意图（无数值） | 开局气质 / 文案音频 |
+| [`12_GLOBAL_OPTIMIZATION_ROADMAP.md`](12_GLOBAL_OPTIMIZATION_ROADMAP.md) | Post-MVP 全局优化轮次、状态、证据与总完成条件 | 规划优化轮次；禁止跨轮盲改 |
 | [`design/FANTASY_GAMEPLAY_OPTIMIZATION.md`](design/FANTASY_GAMEPLAY_OPTIMIZATION.md) | v3.1 设计决策全文 | 争议 / 溯源 |
 | [`GDD.md`](GDD.md) | 入口转发 | 历史 |
 

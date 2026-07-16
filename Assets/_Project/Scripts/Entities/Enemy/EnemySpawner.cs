@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Wendao.Core;
 using Wendao.Data;
 using Wendao.Entities.Player;
+using Wendao.Entities.Visuals;
 using Wendao.Systems.Enemy;
 
 namespace Wendao.Entities.Enemy
@@ -298,6 +299,7 @@ namespace Wendao.Entities.Enemy
             }
 
             brain.SpawnInit(data, position);
+            BudgetVisualFactory.AttachEnemy(enemyObject, data);
             return brain;
         }
 

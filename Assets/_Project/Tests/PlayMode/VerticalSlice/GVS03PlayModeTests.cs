@@ -125,7 +125,7 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
                 .FindActionMap(PlayerInputReader.PlayerActionMapName, true)
                 .FindAction("OpenInventory", true);
             AssertBinding(openInventory, "<Keyboard>/b");
-            AssertBinding(openInventory, "<Gamepad>/selectButton");
+            AssertBinding(openInventory, "<Gamepad>/select");
         }
 
         [Test]

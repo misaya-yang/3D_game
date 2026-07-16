@@ -1,0 +1,479 @@
+{
+  "schema_version": 2,
+  "design_reference": "docs/art/reference/player/player_wanderer_turnaround_v1.png",
+  "source_backend": "quaternius_modular",
+  "source_packages": {
+    "universal_base_characters": {
+      "version": "Standard 2025-12-16",
+      "license": "CC0-1.0",
+      "sha256": "fdbf1804c90dfc1ea03e992bff7da2dfd1a79318e13270a660180f9308455f40",
+      "url": "https://quaternius.com/packs/universalbasecharacters.html"
+    },
+    "modular_character_outfits_fantasy": {
+      "version": "Standard 2026-01-29",
+      "license": "CC0-1.0",
+      "sha256": "c3468b18871cc8c8f05ab14df7712baf22cb9f389cbd870babf130e595187f70",
+      "url": "https://quaternius.com/packs/modularcharacteroutfitsfantasy.html"
+    }
+  },
+  "shared": {
+    "selected_source_root": "quaternius/selected",
+    "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Monk.fbx",
+    "weapon_source": "Assets/_Project/Resources/Art/Budget/Characters/Warrior.fbx",
+    "rig_name": "CharacterArmature",
+    "weight_donor_name": "Monk",
+    "target_height_ratio": 0.985,
+    "triangle_budget": {
+      "lod0": 52000,
+      "head": 9000,
+      "hair": 9000,
+      "outfit": 26000,
+      "accessories": 8000
+    },
+    "palette": {
+      "skin": {
+        "rgba": [0.78, 0.61, 0.48, 1.0],
+        "roughness": 0.64,
+        "metallic": 0.0
+      },
+      "hair": {
+        "rgba": [0.035, 0.045, 0.052, 1.0],
+        "roughness": 0.52,
+        "metallic": 0.0
+      },
+      "eye": {
+        "rgba": [0.72, 0.65, 0.52, 1.0],
+        "roughness": 0.34,
+        "metallic": 0.0
+      },
+      "robe": {
+        "rgba": [0.34, 0.45, 0.48, 1.0],
+        "roughness": 0.84,
+        "metallic": 0.0
+      },
+      "robe_dark": {
+        "rgba": [0.13, 0.20, 0.22, 1.0],
+        "roughness": 0.88,
+        "metallic": 0.0
+      },
+      "leather": {
+        "rgba": [0.20, 0.14, 0.09, 1.0],
+        "roughness": 0.76,
+        "metallic": 0.0
+      },
+      "bronze": {
+        "rgba": [0.42, 0.27, 0.10, 1.0],
+        "roughness": 0.46,
+        "metallic": 0.56
+      },
+      "steel": {
+        "rgba": [0.42, 0.48, 0.50, 1.0],
+        "roughness": 0.36,
+        "metallic": 0.72
+      },
+      "jade": {
+        "rgba": [0.08, 0.30, 0.21, 1.0],
+        "roughness": 0.34,
+        "metallic": 0.08,
+        "emission": [0.012, 0.045, 0.03, 1.0],
+        "emission_strength": 0.16
+      }
+    }
+  },
+  "profiles": {
+    "cultivator": {
+      "display_name": "Young Wandering Cultivator Modular v2",
+      "player_sword": true,
+      "rig": {
+        "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Monk.fbx",
+        "rig_name": "CharacterArmature",
+        "weight_donor_name": "Monk",
+        "output_armature_name": "CultivatorArmature"
+      },
+      "identity": {
+        "age_read": "20-24",
+        "silhouette": "light wandering swordsman",
+        "faction": "player",
+        "avoid": [
+          "western heavy knight",
+          "voxel proportions",
+          "oversized hands",
+          "helmet or face-covering hood",
+          "neon full-body accents"
+        ]
+      },
+      "source": {
+        "base_character": {
+          "path": "base/Superhero_Male_FullBody.fbx",
+          "head_mesh": "SuperHero_Male",
+          "eyes_mesh": "Eyes",
+          "eyebrows_mesh": "Eyebrows",
+          "head_cut_ratio": 0.68
+        },
+        "hair": {
+          "path": "base/Hair_SimpleParted.fbx",
+          "mesh": "Hair_SimpleParted",
+          "fringe_lift_ratio": 0.2,
+          "fringe_pushback_ratio": 0.06
+        },
+        "outfit_parts": [
+          {
+            "path": "outfit/Male_Peasant_Body.fbx",
+            "meshes": ["Male_Peasant_Body"],
+            "role": "robe"
+          },
+          {
+            "path": "outfit/Male_Peasant_Legs.fbx",
+            "meshes": ["Male_Peasant_Legs"],
+            "role": "robe_dark"
+          },
+          {
+            "path": "outfit/Male_Ranger_Arms.fbx",
+            "meshes": [
+              "Male_Ranger_Arms",
+              "Male_Ranger_Arms_Bracer"
+            ],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Feet_Boots.fbx",
+            "meshes": ["Male_Ranger_Feet_Boots"],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Acc_Pauldron.fbx",
+            "meshes": ["Male_Ranger_Acc_Pauldron"],
+            "role": "ranger"
+          }
+        ],
+        "textures": {
+          "skin": "textures/T_Superhero_Male_Ligh.png",
+          "eye": "textures/T_Eye_Brown.png",
+          "hair": "textures/T_Hair_2_BaseColor.png",
+          "peasant": "textures/T_Peasant_2_BaseColor.png",
+          "ranger": "textures/T_Ranger_3_BaseColor.png"
+        }
+      },
+      "shape": {
+        "head_width_scale": 0.96,
+        "jaw_width_scale": 0.91,
+        "face_depth_scale": 0.97,
+        "shoulder_scale": 0.98
+      },
+      "output": {
+        "blend": "ArtSource/Characters/Player/Cultivator_Modular_v2.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/Cultivator.fbx",
+        "manifest": "ArtSource/Characters/Player/Cultivator_Modular_v2_manifest.json",
+        "preview": "docs/art/previews/g09-07/final/01-cultivator-modular-v2.png"
+      }
+    },
+    "npc_guard": {
+      "display_name": "Qingshi Guard Modular v1",
+      "rig": {
+        "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Ranger.fbx",
+        "rig_name": "CharacterArmature",
+        "weight_donor_name": "Ranger",
+        "output_armature_name": "ModularGuardArmature"
+      },
+      "source": {
+        "base_character": {
+          "path": "base/Superhero_Male_FullBody.fbx",
+          "head_mesh": "SuperHero_Male",
+          "eyes_mesh": "Eyes",
+          "eyebrows_mesh": "Eyebrows",
+          "head_cut_ratio": 0.68
+        },
+        "hair": {
+          "path": "base/Hair_SimpleParted.fbx",
+          "mesh": "Hair_SimpleParted",
+          "fringe_lift_ratio": 0.2,
+          "fringe_pushback_ratio": 0.06
+        },
+        "outfit_parts": [
+          {
+            "path": "outfit/Male_Ranger_Body.fbx",
+            "meshes": [
+              "Male_Ranger_Body",
+              "Male_Ranger_Body_Belt_1",
+              "Male_Ranger_Body_Belt_2"
+            ],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Legs.fbx",
+            "meshes": ["Male_Ranger_Legs"],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Arms.fbx",
+            "meshes": [
+              "Male_Ranger_Arms",
+              "Male_Ranger_Arms_Bracer"
+            ],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Feet_Boots.fbx",
+            "meshes": ["Male_Ranger_Feet_Boots"],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Acc_Pauldron.fbx",
+            "meshes": ["Male_Ranger_Acc_Pauldron"],
+            "role": "ranger"
+          }
+        ],
+        "textures": {
+          "skin": "textures/T_Superhero_Male_Ligh.png",
+          "eye": "textures/T_Eye_Brown.png",
+          "hair": "textures/T_Hair_2_BaseColor.png",
+          "peasant": "textures/T_Peasant_2_BaseColor.png",
+          "ranger": "textures/T_Ranger_3_BaseColor.png"
+        }
+      },
+      "shape": {
+        "head_width_scale": 0.97,
+        "jaw_width_scale": 0.94,
+        "face_depth_scale": 0.98
+      },
+      "rig_accessories": [
+        {
+          "source": "Ranger_Bow",
+          "target": "Modular_Guard_Bow",
+          "material": "ranger_leather"
+        }
+      ],
+      "output": {
+        "blend": "ArtSource/Characters/NPC/NpcGuard_Modular_v1.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/NpcGuard_Modular.fbx",
+        "manifest": "ArtSource/Characters/NPC/NpcGuard_Modular_v1_manifest.json",
+        "preview": "docs/art/previews/g09-07/final/02-npc-guard-modular-v1.png"
+      }
+    },
+    "npc_healer": {
+      "display_name": "Qingshi Healer Modular v1",
+      "rig": {
+        "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Cleric.fbx",
+        "rig_name": "CharacterArmature",
+        "weight_donor_name": "Cleric",
+        "output_armature_name": "ModularHealerArmature"
+      },
+      "source": {
+        "base_character": {
+          "path": "base/Superhero_Male_FullBody.fbx",
+          "head_mesh": "SuperHero_Male",
+          "eyes_mesh": "Eyes",
+          "eyebrows_mesh": "Eyebrows",
+          "head_cut_ratio": 0.68
+        },
+        "hair": {
+          "path": "base/Hair_SimpleParted.fbx",
+          "mesh": "Hair_SimpleParted",
+          "fringe_lift_ratio": 0.2,
+          "fringe_pushback_ratio": 0.06
+        },
+        "outfit_parts": [
+          {
+            "path": "outfit/Male_Peasant_Body.fbx",
+            "meshes": ["Male_Peasant_Body"],
+            "role": "robe"
+          },
+          {
+            "path": "outfit/Male_Peasant_Legs.fbx",
+            "meshes": ["Male_Peasant_Legs"],
+            "role": "robe_dark"
+          },
+          {
+            "path": "outfit/Male_Peasant_Feet.fbx",
+            "meshes": ["Male_Peasant_Feet"],
+            "role": "robe_dark"
+          },
+          {
+            "path": "outfit/Male_Ranger_Arms.fbx",
+            "meshes": ["Male_Ranger_Arms"],
+            "role": "ranger"
+          }
+        ],
+        "textures": {
+          "skin": "textures/T_Superhero_Male_Ligh.png",
+          "eye": "textures/T_Eye_Brown.png",
+          "hair": "textures/T_Hair_2_BaseColor.png",
+          "peasant": "textures/T_Peasant_2_BaseColor.png",
+          "ranger": "textures/T_Ranger_3_BaseColor.png"
+        }
+      },
+      "shape": {
+        "head_width_scale": 0.96,
+        "jaw_width_scale": 0.9,
+        "face_depth_scale": 0.97
+      },
+      "rig_accessories": [
+        {
+          "source": "Cleric_Staff",
+          "target": "Modular_Healer_Staff",
+          "material": "ranger_leather"
+        }
+      ],
+      "output": {
+        "blend": "ArtSource/Characters/NPC/NpcHealer_Modular_v1.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/NpcHealer_Modular.fbx",
+        "manifest": "ArtSource/Characters/NPC/NpcHealer_Modular_v1_manifest.json",
+        "preview": "docs/art/previews/g09-07/final/03-npc-healer-modular-v1.png"
+      }
+    },
+    "npc_hermit": {
+      "display_name": "Mountain Hermit Modular v1",
+      "rig": {
+        "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Wizard.fbx",
+        "rig_name": "CharacterArmature",
+        "weight_donor_name": "Wizard.001",
+        "output_armature_name": "ModularHermitArmature"
+      },
+      "source": {
+        "base_character": {
+          "path": "base/Superhero_Male_FullBody.fbx",
+          "head_mesh": "SuperHero_Male",
+          "eyes_mesh": "Eyes",
+          "eyebrows_mesh": "Eyebrows",
+          "head_cut_ratio": 0.68
+        },
+        "hair": {
+          "path": "base/Hair_SimpleParted.fbx",
+          "mesh": "Hair_SimpleParted",
+          "fringe_lift_ratio": 0.22,
+          "fringe_pushback_ratio": 0.07
+        },
+        "outfit_parts": [
+          {
+            "path": "outfit/Male_Peasant_Body.fbx",
+            "meshes": ["Male_Peasant_Body"],
+            "role": "robe"
+          },
+          {
+            "path": "outfit/Male_Peasant_Legs.fbx",
+            "meshes": ["Male_Peasant_Legs"],
+            "role": "robe_dark"
+          },
+          {
+            "path": "outfit/Male_Peasant_Feet.fbx",
+            "meshes": ["Male_Peasant_Feet"],
+            "role": "robe_dark"
+          },
+          {
+            "path": "outfit/Male_Ranger_Arms.fbx",
+            "meshes": ["Male_Ranger_Arms"],
+            "role": "ranger"
+          }
+        ],
+        "textures": {
+          "skin": "textures/T_Superhero_Male_Ligh.png",
+          "eye": "textures/T_Eye_Brown.png",
+          "hair": "textures/T_Hair_2_BaseColor.png",
+          "peasant": "textures/T_Peasant_2_BaseColor.png",
+          "ranger": "textures/T_Ranger_3_BaseColor.png"
+        }
+      },
+      "shape": {
+        "head_width_scale": 0.98,
+        "jaw_width_scale": 0.95,
+        "face_depth_scale": 0.99
+      },
+      "rig_accessories": [
+        {
+          "source": "Wizard_Staff",
+          "target": "Modular_Hermit_Staff",
+          "material": "ranger_leather"
+        }
+      ],
+      "output": {
+        "blend": "ArtSource/Characters/NPC/NpcHermit_Modular_v1.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/NpcHermit_Modular.fbx",
+        "manifest": "ArtSource/Characters/NPC/NpcHermit_Modular_v1_manifest.json",
+        "preview": "docs/art/previews/g09-07/final/04-npc-hermit-modular-v1.png"
+      }
+    },
+    "human_enemy": {
+      "display_name": "Blackwind Bandit Modular v1",
+      "rig": {
+        "animation_rig": "Assets/_Project/Resources/Art/Budget/Characters/Rogue.fbx",
+        "rig_name": "CharacterArmature",
+        "weight_donor_name": "Rogue",
+        "output_armature_name": "ModularBanditArmature"
+      },
+      "source": {
+        "base_character": {
+          "path": "base/Superhero_Male_FullBody.fbx",
+          "head_mesh": "SuperHero_Male",
+          "eyes_mesh": "Eyes",
+          "eyebrows_mesh": "Eyebrows",
+          "head_cut_ratio": 0.68
+        },
+        "hair": {
+          "path": "base/Hair_SimpleParted.fbx",
+          "mesh": "Hair_SimpleParted",
+          "fringe_lift_ratio": 0.18,
+          "fringe_pushback_ratio": 0.05
+        },
+        "outfit_parts": [
+          {
+            "path": "outfit/Male_Ranger_Body.fbx",
+            "meshes": [
+              "Male_Ranger_Body",
+              "Male_Ranger_Body_Belt_1",
+              "Male_Ranger_Body_Belt_2"
+            ],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Legs.fbx",
+            "meshes": ["Male_Ranger_Legs"],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Arms.fbx",
+            "meshes": [
+              "Male_Ranger_Arms",
+              "Male_Ranger_Arms_Bracer"
+            ],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Feet_Boots.fbx",
+            "meshes": ["Male_Ranger_Feet_Boots"],
+            "role": "ranger"
+          },
+          {
+            "path": "outfit/Male_Ranger_Head_Hood.fbx",
+            "meshes": ["Male_Ranger_Head_Hood"],
+            "role": "ranger"
+          }
+        ],
+        "textures": {
+          "skin": "textures/T_Superhero_Male_Ligh.png",
+          "eye": "textures/T_Eye_Brown.png",
+          "hair": "textures/T_Hair_2_BaseColor.png",
+          "peasant": "textures/T_Peasant_2_BaseColor.png",
+          "ranger": "textures/T_Ranger_3_BaseColor.png"
+        }
+      },
+      "shape": {
+        "head_width_scale": 1.0,
+        "jaw_width_scale": 0.98,
+        "face_depth_scale": 1.0
+      },
+      "rig_accessories": [
+        {
+          "source": "Rogue_Dagger",
+          "target": "Modular_Bandit_Dagger",
+          "material": "steel"
+        }
+      ],
+      "output": {
+        "blend": "ArtSource/Characters/Enemy/Bandit_Modular_v1.blend",
+        "fbx": "Assets/_Project/Resources/Art/Budget/Characters/Bandit_Modular.fbx",
+        "manifest": "ArtSource/Characters/Enemy/Bandit_Modular_v1_manifest.json",
+        "preview": "docs/art/previews/g09-07/final/05-bandit-modular-v1.png"
+      }
+    }
+  }
+}

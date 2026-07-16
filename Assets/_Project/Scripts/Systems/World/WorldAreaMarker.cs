@@ -1,5 +1,6 @@
 using UnityEngine;
 using Wendao.Core;
+using Wendao.Data;
 using Wendao.Systems.Quest;
 
 namespace Wendao.Systems.World
@@ -14,6 +15,8 @@ namespace Wendao.Systems.World
         public string NameLocalizationKey { get; private set; } = string.Empty;
         public string DefaultName { get; private set; } = string.Empty;
         public Vector2 Footprint { get; private set; }
+
+        private bool _playerInside;
 
         public void Configure(
             string areaId,
@@ -35,13 +38,40 @@ namespace Wendao.Systems.World
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!WorldActorUtility.IsPlayer(
+                    other != null ? other.gameObject : null))
+            {
+                return;
+            }
+
             if (!string.IsNullOrEmpty(AreaId)
-                && WorldActorUtility.IsPlayer(
-                    other != null ? other.gameObject : null)
                 && ServiceLocator.TryGet<IQuestService>(
                     out IQuestService quests))
             {
                 quests.NotifyReach(AreaId);
+            }
+
+            if (!_playerInside && !string.IsNullOrWhiteSpace(DefaultName))
+            {
+                EventBus.Publish(
+                    UiEvents.ToastRequested,
+                    new ToastInfo
+                    {
+                        LocalizationKey = NameLocalizationKey,
+                        DefaultValue = DefaultName,
+                        Duration = 2.4f
+                    });
+            }
+
+            _playerInside = true;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (WorldActorUtility.IsPlayer(
+                    other != null ? other.gameObject : null))
+            {
+                _playerInside = false;
             }
         }
 
@@ -79,7 +109,12 @@ namespace Wendao.Systems.World
                 collider.enabled = false;
             }
 
-            ApplyMaterial(plate.GetComponent<Renderer>(), color);
+            Renderer renderer = plate.GetComponent<Renderer>();
+            ApplyMaterial(renderer, color);
+            if (renderer != null)
+            {
+                renderer.enabled = false;
+            }
         }
 
         private void EnsureLabel(Color color)
@@ -109,6 +144,7 @@ namespace Wendao.Systems.World
             label.fontSize = 42;
             label.characterSize = 0.12f;
             label.color = Color.Lerp(color, Color.white, 0.65f);
+            label.gameObject.SetActive(false);
         }
 
         private void ApplyMaterial(Renderer renderer, Color color)

@@ -56,6 +56,10 @@ namespace Wendao.Editor
             PlayerSettings.companyName = "Wendao Studio";
             PlayerSettings.productName = "问道长生";
             PlayerSettings.bundleVersion = "1.0.0";
+            PlayerSettings.defaultScreenWidth = 2560;
+            PlayerSettings.defaultScreenHeight = 1440;
+            PlayerSettings.fullScreenMode = FullScreenMode.Windowed;
+            PlayerSettings.resizableWindow = true;
             PlayerSettings.SetApplicationIdentifier(
                 NamedBuildTarget.Standalone,
                 "com.wendao.changsheng");

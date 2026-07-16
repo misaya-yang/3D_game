@@ -232,11 +232,17 @@ namespace Wendao.Systems.World
             float rainAmount = BlendEffect(
                 weather => weather == WeatherId.Rain ? 1f : 0f);
 
-            RenderSettings.fog = fogAmount > 0.001f;
+            WorldVisualProfile visual =
+                WorldEnvironmentProfiles.GetVisualProfile(_sceneName);
+            float fogDensity = Mathf.Lerp(
+                visual.BaseFogDensity,
+                Mathf.Max(0.018f, visual.BaseFogDensity + 0.012f),
+                fogAmount);
+            RenderSettings.fog = fogDensity > 0.0001f;
             RenderSettings.fogMode = FogMode.ExponentialSquared;
-            RenderSettings.fogDensity = Mathf.Lerp(0f, 0.018f, fogAmount);
+            RenderSettings.fogDensity = fogDensity;
             RenderSettings.fogColor = Color.Lerp(
-                new Color(0.58f, 0.64f, 0.66f),
+                visual.FogColor,
                 new Color(0.42f, 0.48f, 0.5f),
                 fogAmount);
 

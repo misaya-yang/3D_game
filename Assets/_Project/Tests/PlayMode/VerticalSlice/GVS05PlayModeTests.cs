@@ -114,21 +114,24 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
             Assert.That(roots.TryChooseRoot(SpiritRootType.Waste), Is.False);
 
             Assert.That(view.SelectRoot(SpiritRootType.Fire), Is.True);
-            Assert.That(roots.Root, Is.EqualTo(SpiritRootType.Fire));
+            Assert.That(roots.HasChosenRoot, Is.False);
+            Assert.That(
+                view.SelectedIntroLocalizationKey,
+                Is.EqualTo(SpiritRootSelectionView.FiveIntroLocalizationKey));
+            Assert.That(view.SelectRoot(SpiritRootType.Water), Is.True);
+            Assert.That(roots.HasChosenRoot, Is.False);
+            Assert.That(SaveManager.Instance.Profile.SpiritRoot, Is.Empty);
+
+            view.ConfirmSelection();
+            Assert.That(roots.Root, Is.EqualTo(SpiritRootType.Water));
             Assert.That(roots.GetCultivationMultiplier(), Is.EqualTo(1.1f));
             Assert.That(
-                roots.GetElementBonus(ElementType.Fire),
+                roots.GetElementBonus(ElementType.Water),
                 Is.EqualTo(0.15f));
             Assert.That(
                 roots.GetIntroDescriptionKey(),
                 Is.EqualTo(SpiritRootSelectionView.FiveIntroLocalizationKey));
-            Assert.That(
-                view.SelectedIntroLocalizationKey,
-                Is.EqualTo(SpiritRootSelectionView.FiveIntroLocalizationKey));
-            Assert.That(view.SelectRoot(SpiritRootType.Water), Is.False);
-            Assert.That(SaveManager.Instance.Profile.SpiritRoot, Is.EqualTo("Fire"));
-
-            view.ConfirmSelection();
+            Assert.That(SaveManager.Instance.Profile.SpiritRoot, Is.EqualTo("Water"));
             Assert.That(view.IsOpen, Is.False);
             Assert.That(input.IsEnabled, Is.True);
         }
@@ -167,6 +170,24 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
             Assert.That(
                 roots.GetIntroDescriptionKey(),
                 Is.EqualTo(SpiritRootSelectionView.WasteIntroLocalizationKey));
+        }
+
+        [Test]
+        public void RandomPreviewCommitsTheExactRareRootOnlyAfterConfirmation()
+        {
+            ISpiritRootService roots = ServiceLocator.Get<ISpiritRootService>();
+            SpiritRootSelectionView view =
+                Object.FindAnyObjectByType<SpiritRootSelectionView>();
+            int heavenSeed = FindSeed(5f / 5.2f, 5.05f / 5.2f);
+
+            Assert.That(view.SelectRandom(heavenSeed), Is.True);
+            Assert.That(view.SelectedRoot, Is.EqualTo(SpiritRootType.Heaven));
+            Assert.That(roots.HasChosenRoot, Is.False);
+            Assert.That(SaveManager.Instance.Profile.SpiritRoot, Is.Empty);
+
+            view.ConfirmSelection();
+            Assert.That(roots.Root, Is.EqualTo(SpiritRootType.Heaven));
+            Assert.That(view.IsOpen, Is.False);
         }
 
         [Test]

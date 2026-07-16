@@ -200,11 +200,19 @@ namespace Wendao.Systems.World
 
         private void ApplyLighting()
         {
+            string sceneName = SceneManager.GetActiveScene().name;
+            if (!IsGameplayScene(sceneName))
+            {
+                return;
+            }
+
             if (_sun == null)
             {
                 EnsureSceneLight(SceneManager.GetActiveScene());
             }
 
+            WorldVisualProfile visual =
+                WorldEnvironmentProfiles.GetVisualProfile(sceneName);
             float daylight = Mathf.Clamp01(
                 Mathf.Sin((TimeOfDay - SunriseHour) / 12f * Mathf.PI));
             if (_sun != null)
@@ -214,14 +222,20 @@ namespace Wendao.Systems.World
                     sunAngle,
                     -32f,
                     0f);
-                _sun.intensity = Mathf.Lerp(0.08f, 1.1f, daylight);
+                _sun.intensity = Mathf.Lerp(
+                    0.05f,
+                    visual.SunIntensity,
+                    daylight);
                 _sun.color = Color.Lerp(
                     new Color(0.34f, 0.43f, 0.68f),
-                    new Color(1f, 0.94f, 0.8f),
+                    visual.SunColor,
                     daylight);
             }
 
-            RenderSettings.ambientIntensity = Mathf.Lerp(0.18f, 1f, daylight);
+            RenderSettings.ambientIntensity = Mathf.Lerp(
+                0.16f,
+                visual.AmbientIntensity,
+                daylight);
         }
 
         private void WriteToWorld()

@@ -33,6 +33,8 @@ namespace Wendao.UI.Skill
             new Text[SkillManager.BarSlotCount];
         private readonly Text[] _cooldownLabels =
             new Text[SkillManager.BarSlotCount];
+        private readonly Image[] _slotIcons =
+            new Image[SkillManager.BarSlotCount];
         private readonly string[] _currentSkillIds =
             new string[SkillManager.BarSlotCount];
         private readonly SkillQuickbarSlotDropTarget[] _dropTargets =
@@ -90,10 +92,15 @@ namespace Wendao.UI.Skill
                 bool canAfford = skill == null
                     || currentMana + 0.0001f >= skill.BaseManaCost;
                 _slotBackgrounds[index].color = cooldown > 0.0001f
-                    ? new Color(0.12f, 0.16f, 0.14f, 0.9f)
+                    ? new Color(0.08f, 0.12f, 0.1f, 0.94f)
                     : canAfford
-                        ? new Color(0.12f, 0.3f, 0.24f, 0.92f)
-                        : new Color(0.34f, 0.12f, 0.11f, 0.92f);
+                        ? new Color(0.16f, 0.31f, 0.24f, 0.96f)
+                        : new Color(0.39f, 0.14f, 0.12f, 0.96f);
+                _slotIcons[index].sprite = RuntimeUiTheme.GetIcon(
+                    skill != null ? "target" : "locked");
+                _slotIcons[index].color = skill != null
+                    ? RuntimeUiTheme.GoldSoft
+                    : new Color(0.48f, 0.54f, 0.49f, 0.75f);
             }
 
             SkillData primary = ConfigDatabase.Instance?.GetSkill(
@@ -174,32 +181,47 @@ namespace Wendao.UI.Skill
                 230);
             for (int index = 0; index < _slotBackgrounds.Length; index++)
             {
-                float x = (index - 1.5f) * 190f;
+                float x = (index - 1.5f) * 122f;
                 Image background = RuntimeUiFactory.CreateImage(
                     canvas.transform,
                     $"SkillSlot{index + 1}",
-                    new Color(0.12f, 0.3f, 0.24f, 0.92f),
+                    RuntimeUiTheme.SurfaceRaised,
                     new Vector2(0.5f, 0f),
                     new Vector2(0.5f, 0f),
-                    new Vector2(176f, 82f),
-                    new Vector2(x, 82f));
+                    new Vector2(110f, 94f),
+                    new Vector2(x, 68f));
+                background.sprite = RuntimeUiTheme.SquareButtonSprite;
+                background.type = Image.Type.Sliced;
                 _slotBackgrounds[index] = background;
+                _slotIcons[index] = RuntimeUiFactory.CreateIcon(
+                    background.transform,
+                    $"SkillSlot{index + 1}Icon",
+                    "locked",
+                    new Vector2(34f, 34f),
+                    new Vector2(0f, 14f),
+                    RuntimeUiTheme.Muted);
                 _slotLabels[index] = RuntimeUiFactory.CreateText(
                     background.transform,
                     $"SkillSlot{index + 1}Label",
                     string.Format(SlotDefaultValue, index + 1, EmptyDefaultValue),
-                    20,
-                    new Color(0.94f, 0.92f, 0.78f, 1f),
-                    new Vector2(164f, 36f),
-                    new Vector2(0f, 16f));
+                    17,
+                    RuntimeUiTheme.Parchment,
+                    new Vector2(100f, 31f),
+                    new Vector2(0f, -24f));
+                RuntimeUiTheme.StyleText(
+                    _slotLabels[index],
+                    RuntimeUiTextRole.Body);
                 _cooldownLabels[index] = RuntimeUiFactory.CreateText(
                     background.transform,
                     $"SkillSlot{index + 1}Cooldown",
                     string.Empty,
                     16,
-                    new Color(0.72f, 0.9f, 0.82f, 1f),
-                    new Vector2(164f, 30f),
-                    new Vector2(0f, -19f));
+                    RuntimeUiTheme.GoldSoft,
+                    new Vector2(100f, 36f),
+                    new Vector2(0f, 12f));
+                RuntimeUiTheme.StyleText(
+                    _cooldownLabels[index],
+                    RuntimeUiTextRole.Warning);
                 SkillQuickbarSlotDropTarget dropTarget =
                     background.gameObject.AddComponent<SkillQuickbarSlotDropTarget>();
                 dropTarget.Configure(this, index);
@@ -210,10 +232,11 @@ namespace Wendao.UI.Skill
                 canvas.transform,
                 "PlayerManaLabel",
                 string.Format(PlayerManaDefaultValue, 0f, 0f),
-                22,
-                new Color(0.48f, 0.88f, 0.92f, 1f),
-                new Vector2(280f, 36f),
-                new Vector2(0f, 145f));
+                18,
+                RuntimeUiTheme.Mana,
+                new Vector2(260f, 30f),
+                new Vector2(0f, 124f));
+            RuntimeUiTheme.StyleText(_manaLabel, RuntimeUiTextRole.Body);
             RectTransform manaRect = _manaLabel.rectTransform;
             manaRect.anchorMin = new Vector2(0.5f, 0f);
             manaRect.anchorMax = new Vector2(0.5f, 0f);

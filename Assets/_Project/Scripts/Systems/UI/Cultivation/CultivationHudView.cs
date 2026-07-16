@@ -140,35 +140,39 @@ namespace Wendao.UI.Cultivation
                 transform,
                 "CultivationHudCanvas",
                 105);
-            Image panel = RuntimeUiFactory.CreateImage(
+            Image panel = RuntimeUiFactory.CreatePanel(
                 canvas.transform,
                 "CultivationHudPanel",
-                new Color(0.035f, 0.07f, 0.055f, 0.88f),
-                new Vector2(0f, 1f),
-                new Vector2(0f, 1f),
-                new Vector2(470f, 126f),
-                new Vector2(250f, -88f));
+                new Vector2(438f, 104f),
+                Vector2.zero);
+            panel.rectTransform.anchorMin = new Vector2(0f, 1f);
+            panel.rectTransform.anchorMax = new Vector2(0f, 1f);
+            panel.rectTransform.anchoredPosition = new Vector2(235f, -72f);
+            panel.color = new Color(0.08f, 0.14f, 0.115f, 0.88f);
             _realmLabel = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "CultivationRealmLabel",
                 string.Empty,
-                24,
-                new Color(0.9f, 0.83f, 0.62f, 1f),
-                new Vector2(420f, 38f),
-                new Vector2(0f, 35f));
+                22,
+                RuntimeUiTheme.GoldSoft,
+                new Vector2(392f, 34f),
+                new Vector2(0f, 29f));
+            _realmLabel.alignment = TextAnchor.MiddleLeft;
+            RuntimeUiTheme.StyleText(_realmLabel, RuntimeUiTextRole.Heading);
 
             Image barBackground = RuntimeUiFactory.CreateImage(
                 panel.transform,
                 "CultivationXpBackground",
-                new Color(0.08f, 0.12f, 0.1f, 1f),
+                RuntimeUiTheme.SurfaceInset,
                 new Vector2(0.5f, 0.5f),
                 new Vector2(0.5f, 0.5f),
-                new Vector2(420f, 28f),
-                new Vector2(0f, -10f));
+                new Vector2(392f, 25f),
+                new Vector2(0f, -8f));
+            RuntimeUiTheme.StylePanel(barBackground, true);
             _xpFill = RuntimeUiFactory.CreateImage(
                 barBackground.transform,
                 "CultivationXpFill",
-                new Color(0.36f, 0.78f, 0.55f, 1f),
+                RuntimeUiTheme.Jade,
                 Vector2.zero,
                 Vector2.one,
                 Vector2.zero,
@@ -183,10 +187,12 @@ namespace Wendao.UI.Cultivation
                 panel.transform,
                 "CultivationXpLabel",
                 string.Format(XpDefaultValue, 0f, 0f),
-                19,
-                new Color(0.9f, 0.93f, 0.84f, 1f),
-                new Vector2(420f, 32f),
-                new Vector2(0f, -43f));
+                17,
+                RuntimeUiTheme.Muted,
+                new Vector2(392f, 28f),
+                new Vector2(0f, -35f));
+            _xpLabel.alignment = TextAnchor.MiddleRight;
+            RuntimeUiTheme.StyleText(_xpLabel, RuntimeUiTextRole.Muted);
         }
     }
 }

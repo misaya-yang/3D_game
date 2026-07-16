@@ -1,6 +1,7 @@
 using UnityEngine;
 using Wendao.Core;
 using Wendao.Data;
+using Wendao.Entities.Visuals;
 using Wendao.Systems.Combat;
 using Wendao.Systems.Debugging;
 using Wendao.Systems.Input;
@@ -134,6 +135,21 @@ namespace Wendao.Entities.Player
                 ResolveInputSource();
             }
 
+            bool gameplayInputLocked = !_inputEnabled
+                || (_inputSource != null && !_inputSource.IsEnabled);
+            if (gameplayInputLocked)
+            {
+                _horizontalVelocity = Vector3.zero;
+                if (State == PlayerState.Dodge)
+                {
+                    _dodgeElapsed = 0f;
+                    _dodgeDistanceTravelled = 0f;
+                    SetState(IsGrounded ? PlayerState.Idle : PlayerState.Fall);
+                }
+
+                StopBlock();
+            }
+
             TickDodgeState(Time.deltaTime);
             if (State == PlayerState.Dodge)
             {
@@ -158,7 +174,7 @@ namespace Wendao.Entities.Player
                 return;
             }
 
-            if (_inputEnabled && _inputSource != null)
+            if (!gameplayInputLocked && _inputSource != null)
             {
                 if (TryProcessBufferedDodgeInput())
                 {
@@ -193,7 +209,7 @@ namespace Wendao.Entities.Player
                 && _statusEffects.IsRooted(gameObject);
             TickMovement(
                 Time.deltaTime,
-                _inputEnabled
+                !gameplayInputLocked
                     && _inputSource != null
                     && !actionLocked
                     && !rooted,
@@ -842,7 +858,8 @@ namespace Wendao.Entities.Player
 
         private void EnsureGreyboxBody()
         {
-            if (transform.Find("GreyboxBody") != null)
+            if (transform.Find("GreyboxBody") != null
+                || transform.Find(BudgetVisualFactory.VisualRootName) != null)
             {
                 return;
             }

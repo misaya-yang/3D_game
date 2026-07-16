@@ -277,11 +277,13 @@ namespace Wendao.Tests.PlayMode.VerticalSlice
                     ThirdPersonCamera.MinimumCollisionDistance,
                     ThirdPersonCamera.ExploreDistance - 0.001f));
             Assert.That(camera.FadedOccluderCount, Is.GreaterThanOrEqualTo(1));
+            Assert.That(renderer.forceRenderingOff, Is.True);
 
             wall.transform.position = new Vector3(100f, 100f, 100f);
             Physics.SyncTransforms();
             camera.TickCamera(1f);
             Assert.That(camera.FadedOccluderCount, Is.Zero);
+            Assert.That(renderer.forceRenderingOff, Is.False);
             Assert.That(
                 camera.CurrentDistance,
                 Is.EqualTo(ThirdPersonCamera.ExploreDistance).Within(0.001f));

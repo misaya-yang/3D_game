@@ -85,7 +85,7 @@ namespace Wendao.UI.NPC
                 Refresh();
             }
 
-            if (_input != null
+            if (IsInputAlive()
                 && _input.InteractPressedThisFrame
                 && Time.frameCount > _openedFrame)
             {
@@ -131,6 +131,10 @@ namespace Wendao.UI.NPC
                 : node.End
                     ? FinishDefaultValue
                     : ContinueDefaultValue;
+            if (VisibleChoiceCount > 0)
+            {
+                RuntimeUiTheme.Focus(_choiceButtons[0]);
+            }
         }
 
         public void AdvanceOrChooseFirst()
@@ -211,7 +215,9 @@ namespace Wendao.UI.NPC
                     new Vector2(-380f + index * 380f, -70f));
                 Button button = image.gameObject.AddComponent<Button>();
                 button.targetGraphic = image;
+                RuntimeUiTheme.StyleButton(button, false);
                 button.onClick.AddListener(() => Choose(capturedIndex));
+                button.gameObject.SetActive(false);
                 _choiceButtons[index] = button;
                 _choiceLabels[index] = RuntimeUiFactory.CreateText(
                     image.transform,
@@ -231,6 +237,9 @@ namespace Wendao.UI.NPC
                 new Color(0.65f, 0.78f, 0.68f, 1f),
                 new Vector2(360f, 42f),
                 new Vector2(470f, -135f));
+            RuntimeUiTheme.StyleText(_speakerText, RuntimeUiTextRole.Title);
+            RuntimeUiTheme.StyleText(_bodyText, RuntimeUiTextRole.Body);
+            RuntimeUiTheme.StyleText(_actionHintText, RuntimeUiTextRole.Muted);
         }
 
         private void Choose(int choiceIndex)
@@ -247,10 +256,18 @@ namespace Wendao.UI.NPC
                 ServiceLocator.TryGet(out _dialogue);
             }
 
-            if (_input == null)
+            if (!IsInputAlive())
             {
+                _input = null;
                 ServiceLocator.TryGet(out _input);
             }
+        }
+
+        private bool IsInputAlive()
+        {
+            return _input != null
+                && (!(_input is UnityEngine.Object unityObject)
+                    || unityObject != null);
         }
 
         private void ApplyVisible(bool visible)

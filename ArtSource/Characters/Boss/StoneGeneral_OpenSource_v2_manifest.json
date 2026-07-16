@@ -1,0 +1,101 @@
+{
+  "schema_version": 2,
+  "profile": "stone_general",
+  "design": {
+    "silhouette": "broad skull-masked stone guardian with maul",
+    "palette": "charcoal stone, dark slate plates, jade core",
+    "avoid": [
+      "recolored human",
+      "primitive-only body",
+      "voxel silhouette",
+      "oversized glowing full-body material"
+    ]
+  },
+  "sources": {
+    "animated_body": {
+      "path": "/tmp/wendao-assets/creatures/Orc_Skull.fbx",
+      "sha256": "9724b8659bda67fb8664af54467014c19517f3773e5224f1d09ca5da880d44dc",
+      "license": "CC0-1.0",
+      "upstream": "https://quaternius.com/packs/ultimatemonsters.html"
+    },
+    "rock_parts": [
+      {
+        "path": "Assets/_Project/Resources/Art/Budget/Nature/rock_largeC.fbx",
+        "sha256": "fcfdb61e03aae4336bbd4ff021cde4c83403f8dd68646d4ed86f97fb87cca1ae",
+        "license": "CC0-1.0"
+      },
+      {
+        "path": "Assets/_Project/Resources/Art/Budget/Nature/rock_smallF.fbx",
+        "sha256": "c22cd3ed815b26bf4c814e868237e04eff9453f51de959df780a62b1fea7a4c3",
+        "license": "CC0-1.0"
+      },
+      {
+        "path": "Assets/_Project/Resources/Art/Budget/Nature/rock_tallC.fbx",
+        "sha256": "5d7ab0aaa4cdf02e78de6ba9f3071e32cbac5395ffe07c871a9a4eb0f9918c9e",
+        "license": "CC0-1.0"
+      }
+    ]
+  },
+  "outputs": {
+    "blend": "ArtSource/Characters/Boss/StoneGeneral_OpenSource_v2.blend",
+    "fbx": "Assets/_Project/Resources/Art/Budget/Creatures/StoneGeneral.fbx",
+    "preview": "docs/art/previews/g09-07/boss/02-stone-general-open-source-v2.png"
+  },
+  "validation": {
+    "total_triangles": 7977,
+    "total_vertices": 4705,
+    "bone_count": 58,
+    "ground_error": 0.0,
+    "bounds": {
+      "min": [
+        -2.349082,
+        -1.214874,
+        0.0
+      ],
+      "max": [
+        2.3428,
+        0.801822,
+        3.34764
+      ],
+      "size": [
+        4.691882,
+        2.016696,
+        3.34764
+      ]
+    },
+    "actions": [
+      "CharacterArmature|Death",
+      "CharacterArmature|Duck",
+      "CharacterArmature|Idle",
+      "CharacterArmature|Jump",
+      "CharacterArmature|Jump_Idle",
+      "CharacterArmature|Jump_Land",
+      "CharacterArmature|No",
+      "CharacterArmature|Punch",
+      "CharacterArmature|RecieveHit",
+      "CharacterArmature|Run",
+      "CharacterArmature|Walk",
+      "CharacterArmature|Wave",
+      "CharacterArmature|Weapon",
+      "CharacterArmature|Yes"
+    ],
+    "objects": [
+      "StoneGeneral_Body",
+      "StoneGeneral_ChestPlate",
+      "StoneGeneral_Core",
+      "StoneGeneral_Crown",
+      "StoneGeneral_Eye_L",
+      "StoneGeneral_Eye_R",
+      "StoneGeneral_Forearm_L",
+      "StoneGeneral_Forearm_R",
+      "StoneGeneral_Maul",
+      "StoneGeneral_Shoulder_L",
+      "StoneGeneral_Shoulder_R"
+    ]
+  },
+  "hashes": {
+    "blend": "97722cfe491c22009b1f033ac2069d505bf16306d28c5c81eeda0be4bfe0ef33",
+    "fbx": "f5a91e58451e40e95cec37fab456964afe93a036f4e8bfad1bc3188afd16cb99",
+    "preview": "39c118cfa760a52704e05a8845ac73bb42f1b7f2315f5972f6b4ff6c11552d78"
+  }
+}

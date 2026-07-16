@@ -142,6 +142,14 @@ namespace Wendao.UI.Combat
                 new Vector2(920f, 430f),
                 Vector2.zero);
 
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "DeathWarningIcon",
+                "warning",
+                new Vector2(54f, 54f),
+                new Vector2(0f, 165f),
+                RuntimeUiTheme.Warning);
+
             RuntimeUiFactory.CreateText(
                 panel.transform,
                 "DeathMessage",

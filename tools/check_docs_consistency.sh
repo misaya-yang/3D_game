@@ -22,15 +22,17 @@ goal_rows="$({
     awk '
         /^```yaml$/ {
             in_yaml = 1
-            id = phase = status = dependencies = ""
+            id = phase = status = dependencies = superseded_by = ""
             has_refs = has_deliverables = has_acceptance = has_out_of_scope = 0
             next
         }
         /^```$/ && in_yaml {
             if (id != "") {
                 if (dependencies == "") dependencies = "-"
+                if (superseded_by == "") superseded_by = "-"
                 print id "\t" phase "\t" status "\t" dependencies "\t" \
-                    has_refs "\t" has_deliverables "\t" has_acceptance "\t" has_out_of_scope
+                    has_refs "\t" has_deliverables "\t" has_acceptance "\t" \
+                    has_out_of_scope "\t" superseded_by
             }
             in_yaml = 0
             next
@@ -38,6 +40,7 @@ goal_rows="$({
         in_yaml && /^id:/ { id = $2 }
         in_yaml && /^phase:/ { phase = $2 }
         in_yaml && /^status:/ { status = $2 }
+        in_yaml && /^superseded_by:/ { superseded_by = $2 }
         in_yaml && /^depends_on:/ {
             dependencies = $0
             sub(/^depends_on: \[/, "", dependencies)
@@ -79,7 +82,7 @@ if [[ "${active_count}" == "1" ]]; then
         || fail "progress status is ${progress_status:-missing}, expected in_progress"
 elif [[ "${active_count}" == "0" ]]; then
     unfinished_ids="$(printf '%s\n' "${goal_rows}" \
-        | awk -F '\t' '$3 != "done" {print $1 "=" $3}')"
+        | awk -F '\t' '$3 != "done" && !($3 == "implemented" && $9 != "-") {print $1 "=" $3}')"
     [[ -z "${unfinished_ids}" ]] \
         || fail "no active Goal but unfinished cards remain: ${unfinished_ids}"
     progress_card_status="$(printf '%s\n' "${goal_rows}" \
@@ -93,6 +96,19 @@ else
 fi
 
 known_ids="$(printf '%s\n' "${goal_rows}" | awk -F '\t' '{print $1}')"
+while IFS=$'\t' read -r id _phase status _dependencies \
+    _refs _deliverables _acceptance _out_of_scope superseded_by; do
+    [[ "${superseded_by}" != "-" ]] || continue
+    [[ "${status}" == "implemented" ]] \
+        || fail "${id} uses superseded_by but status is ${status}"
+    printf '%s\n' "${known_ids}" | rg -qx "${superseded_by}" \
+        || fail "${id} is superseded by unknown Goal ${superseded_by}"
+    replacement_status="$(printf '%s\n' "${goal_rows}" \
+        | awk -F '\t' -v wanted="${superseded_by}" '$1 == wanted {print $3}')"
+    [[ "${replacement_status}" == "done" ]] \
+        || fail "${id} replacement ${superseded_by}=${replacement_status} is not done"
+done <<< "${goal_rows}"
+
 while IFS=$'\t' read -r id _phase _status dependencies _rest; do
     IFS=',' read -ra dependency_list <<< "${dependencies}"
     for dependency in "${dependency_list[@]}"; do

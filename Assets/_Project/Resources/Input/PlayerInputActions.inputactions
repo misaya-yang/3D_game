@@ -64,13 +64,13 @@
         { "name": "", "id": "06044dc9-e6ec-4940-bbb6-55f081846a52", "path": "<Keyboard>/e", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "Interact", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "9ebac50c-a6aa-499e-9c7f-76299b50f2ae", "path": "<Gamepad>/buttonWest", "interactions": "", "processors": "", "groups": "Gamepad", "action": "Interact", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "20601314-fde7-4214-8c6e-c8c14fbd1aee", "path": "<Keyboard>/b", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "OpenInventory", "isComposite": false, "isPartOfComposite": false },
-        { "name": "", "id": "5f3cead7-963e-4465-afb8-e882fd7a8d7a", "path": "<Gamepad>/selectButton", "interactions": "", "processors": "", "groups": "Gamepad", "action": "OpenInventory", "isComposite": false, "isPartOfComposite": false },
+        { "name": "", "id": "5f3cead7-963e-4465-afb8-e882fd7a8d7a", "path": "<Gamepad>/select", "interactions": "", "processors": "", "groups": "Gamepad", "action": "OpenInventory", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "cb0458d0-58a1-42dc-9326-dd76268c5535", "path": "<Keyboard>/c", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "OpenCharacter", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "cf187466-4e50-45aa-8a8d-c24142cd2b93", "path": "<Keyboard>/k", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "OpenSkill", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "9cfac525-4246-4c8f-a7e3-e186bc8f0589", "path": "<Keyboard>/m", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "OpenMap", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "70f94321-a2c3-4864-b489-e602ddc54984", "path": "<Keyboard>/j", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "OpenQuest", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "7de9d72d-1a8c-40f0-8acc-33c72d0ab550", "path": "<Keyboard>/escape", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "Pause", "isComposite": false, "isPartOfComposite": false },
-        { "name": "", "id": "2b85546d-2134-41b7-b109-2b256f1e84d9", "path": "<Gamepad>/startButton", "interactions": "", "processors": "", "groups": "Gamepad", "action": "Pause", "isComposite": false, "isPartOfComposite": false },
+        { "name": "", "id": "2b85546d-2134-41b7-b109-2b256f1e84d9", "path": "<Gamepad>/start", "interactions": "", "processors": "", "groups": "Gamepad", "action": "Pause", "isComposite": false, "isPartOfComposite": false },
         { "name": "", "id": "32d2e111-5dd3-444f-a774-0bb507fc5f14", "path": "<Keyboard>/v", "interactions": "", "processors": "", "groups": "Keyboard&Mouse", "action": "Mount", "isComposite": false, "isPartOfComposite": false }
       ]
     }

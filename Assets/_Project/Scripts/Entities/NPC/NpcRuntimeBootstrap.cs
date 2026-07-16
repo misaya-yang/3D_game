@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Wendao.Data;
+using Wendao.Entities.Visuals;
 using Wendao.Systems.Quest;
 using Wendao.Systems.Shop;
 using Wendao.Systems.World;
@@ -324,6 +325,7 @@ namespace Wendao.Entities.NPC
             ApplyMaterial(npcObject.GetComponent<Renderer>(), objectName, color);
             NPCController controller = npcObject.AddComponent<NPCController>();
             controller.ConfigureData(data);
+            BudgetVisualFactory.AttachNpc(npcObject, objectName);
             return controller;
         }
 

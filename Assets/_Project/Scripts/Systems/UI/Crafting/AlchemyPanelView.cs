@@ -9,6 +9,7 @@ using Wendao.Systems.Crafting;
 using Wendao.Systems.Input;
 using Wendao.Systems.Inventory;
 using Wendao.Systems.Tutorial;
+using Wendao.UI.Common;
 using Wendao.UI.SceneFlow;
 
 namespace Wendao.UI.Crafting
@@ -64,6 +65,9 @@ namespace Wendao.UI.Crafting
 
         private void OnEnable()
         {
+            EventBus.Subscribe<AlchemyFurnaceInfo>(
+                AlchemyEvents.FurnaceInteracted,
+                HandleFurnaceInteracted);
             EventBus.Subscribe<CraftResultInfo>(
                 AlchemyEvents.CraftCompleted,
                 HandleCraftCompleted);
@@ -77,6 +81,9 @@ namespace Wendao.UI.Crafting
 
         private void OnDisable()
         {
+            EventBus.Unsubscribe<AlchemyFurnaceInfo>(
+                AlchemyEvents.FurnaceInteracted,
+                HandleFurnaceInteracted);
             EventBus.Unsubscribe<CraftResultInfo>(
                 AlchemyEvents.CraftCompleted,
                 HandleCraftCompleted);
@@ -145,6 +152,17 @@ namespace Wendao.UI.Crafting
             {
                 ClearUiSelection();
             }
+        }
+
+        private void HandleFurnaceInteracted(AlchemyFurnaceInfo info)
+        {
+            if (ServiceLocator.TryGet<IUIManager>(out IUIManager manager))
+            {
+                manager.ShowPanel(UiPanelIds.Alchemy);
+                return;
+            }
+
+            SetOpen(true);
         }
 
         public void SelectRecipe(string recipeId)
@@ -256,6 +274,13 @@ namespace Wendao.UI.Crafting
                 new Color(0.92f, 0.76f, 0.42f, 1f),
                 new Vector2(760f, 58f),
                 new Vector2(0f, 350f));
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "AlchemyTitleIcon",
+                "star",
+                new Vector2(38f, 38f),
+                new Vector2(-120f, 350f),
+                RuntimeUiTheme.GoldSoft);
             RuntimeUiFactory.CreateText(
                 panel.transform,
                 "AlchemyHelp",
@@ -320,7 +345,7 @@ namespace Wendao.UI.Crafting
                 new Vector2(220f, 62f),
                 new Vector2(135f, -290f));
             _craftButton.onClick.AddListener(() => TryCraftSelected());
-            _closeButton.onClick.AddListener(() => SetOpen(false));
+            _closeButton.onClick.AddListener(RequestClose);
         }
 
         private void RefreshSelection()
@@ -409,6 +434,17 @@ namespace Wendao.UI.Crafting
             {
                 ServiceLocator.TryGet(out _input);
             }
+        }
+
+        private void RequestClose()
+        {
+            if (ServiceLocator.TryGet<IUIManager>(out IUIManager manager))
+            {
+                manager.HidePanel(UiPanelIds.Alchemy);
+                return;
+            }
+
+            SetOpen(false);
         }
 
         private void RestoreGameplayInput()

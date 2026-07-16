@@ -167,6 +167,7 @@ public static class EventBus
 | OnBlackwindFloorCompleted | BlackwindFloorInfo | BlackwindDungeonSystem | 封印门、Save、任务 |
 | OnBlackwindRunReset | BlackwindRunInfo | BlackwindDungeonSystem | Encounter 清场并按 checkpoint 重建 |
 | OnBlackwindRunCompleted | BlackwindFloorInfo | BlackwindDungeonSystem | 回程门、任务、成就 |
+| OnAlchemyFurnaceInteracted | AlchemyFurnaceInfo | AlchemyFurnaceInteractable | Alchemy UI |
 | OnCraftCompleted | CraftResultInfo | Alchemy | Inventory, UI, Ach |
 | OnCraftFailed | CraftResultInfo | Alchemy | UI |
 | OnShopOpened | ShopOpenInfo | ShopSystem | Shop UI, Input |

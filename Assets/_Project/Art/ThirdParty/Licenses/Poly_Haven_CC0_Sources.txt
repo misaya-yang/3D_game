@@ -1,0 +1,15 @@
+Poly Haven textures used by G09-02
+License: CC0 1.0 Universal
+License and FAQ: https://polyhaven.com/license
+
+grass_path_2
+https://polyhaven.com/a/grass_path_2
+
+forest_ground_04
+https://polyhaven.com/a/forest_ground_04
+
+rocky_terrain
+https://polyhaven.com/a/rocky_terrain
+
+Downloaded at 1K resolution. Only diffuse JPG maps are redistributed in this
+repository; normal, displacement, roughness, and preview files are omitted.

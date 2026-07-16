@@ -48,15 +48,32 @@ namespace Wendao.UI.SceneFlow
 
         public static void EnsureEventSystem()
         {
-            if (EventSystem.current != null)
+            EventSystem eventSystem = EventSystem.current;
+            if (eventSystem == null)
             {
-                return;
+                var eventSystemObject = new GameObject(
+                    "EventSystem",
+                    typeof(EventSystem),
+                    typeof(InputSystemUIInputModule));
+                eventSystem = eventSystemObject.GetComponent<EventSystem>();
             }
 
-            new GameObject(
-                "EventSystem",
-                typeof(EventSystem),
-                typeof(InputSystemUIInputModule));
+            InputSystemUIInputModule inputModule =
+                eventSystem.GetComponent<InputSystemUIInputModule>();
+            if (inputModule == null)
+            {
+                inputModule = eventSystem.gameObject.AddComponent<InputSystemUIInputModule>();
+            }
+            if (inputModule.actionsAsset == null)
+            {
+                inputModule.AssignDefaultActions();
+            }
+
+            // A component added to an already-active object receives OnEnable
+            // before AssignDefaultActions. Explicitly enabling the assigned
+            // asset prevents a visually responsive EventSystem whose submit
+            // and click actions never actually fire in a built Player.
+            inputModule.actionsAsset?.Enable();
         }
 
         public static Image CreateImage(
@@ -79,6 +96,7 @@ namespace Wendao.UI.SceneFlow
 
             Image image = imageObject.GetComponent<Image>();
             image.color = color;
+            RuntimeUiTheme.ApplyNamedImageStyle(image, name);
             return image;
         }
 
@@ -108,7 +126,164 @@ namespace Wendao.UI.SceneFlow
             text.alignment = TextAnchor.MiddleCenter;
             text.horizontalOverflow = HorizontalWrapMode.Wrap;
             text.verticalOverflow = VerticalWrapMode.Truncate;
+            text.lineSpacing = 1.08f;
+            var shadow = textObject.AddComponent<Shadow>();
+            shadow.effectColor = new Color(0f, 0f, 0f, 0.5f);
+            shadow.effectDistance = new Vector2(1f, -1f);
             return text;
+        }
+
+        public static Image CreatePanel(
+            Transform parent,
+            string name,
+            Vector2 size,
+            Vector2 position,
+            bool inset = false)
+        {
+            Image image = CreateImage(
+                parent,
+                name,
+                inset ? RuntimeUiTheme.SurfaceInset : RuntimeUiTheme.Surface,
+                new Vector2(0.5f, 0.5f),
+                new Vector2(0.5f, 0.5f),
+                size,
+                position);
+            RuntimeUiTheme.StylePanel(image, inset);
+            return image;
+        }
+
+        public static Button CreateButton(
+            Transform parent,
+            string name,
+            string label,
+            Vector2 size,
+            Vector2 position,
+            bool primary = false,
+            string iconName = null)
+        {
+            Image image = CreateImage(
+                parent,
+                name,
+                primary ? RuntimeUiTheme.Jade : RuntimeUiTheme.SurfaceRaised,
+                new Vector2(0.5f, 0.5f),
+                new Vector2(0.5f, 0.5f),
+                size,
+                position);
+            var button = image.gameObject.AddComponent<Button>();
+            button.targetGraphic = image;
+            RuntimeUiTheme.StyleButton(button, primary);
+
+            float iconSpace = string.IsNullOrWhiteSpace(iconName) ? 0f : 46f;
+            Text text = CreateText(
+                image.transform,
+                "Label",
+                label,
+                Mathf.RoundToInt(Mathf.Clamp(size.y * 0.34f, 21f, 30f)),
+                RuntimeUiTheme.Parchment,
+                new Vector2(size.x - 28f - iconSpace, size.y - 12f),
+                new Vector2(iconSpace * 0.35f, 0f));
+            RuntimeUiTheme.StyleText(text, RuntimeUiTextRole.Body);
+
+            if (!string.IsNullOrWhiteSpace(iconName))
+            {
+                Image icon = CreateImage(
+                    image.transform,
+                    "Icon",
+                    RuntimeUiTheme.GoldSoft,
+                    new Vector2(0.5f, 0.5f),
+                    new Vector2(0.5f, 0.5f),
+                    new Vector2(34f, 34f),
+                    new Vector2(-size.x * 0.34f, 0f));
+                icon.sprite = RuntimeUiTheme.GetIcon(iconName);
+                icon.preserveAspect = true;
+                icon.raycastTarget = false;
+            }
+
+            return button;
+        }
+
+        public static Image CreateIcon(
+            Transform parent,
+            string name,
+            string iconName,
+            Vector2 size,
+            Vector2 position,
+            Color color)
+        {
+            Image icon = CreateImage(
+                parent,
+                name,
+                color,
+                new Vector2(0.5f, 0.5f),
+                new Vector2(0.5f, 0.5f),
+                size,
+                position);
+            icon.sprite = RuntimeUiTheme.GetIcon(iconName);
+            icon.preserveAspect = true;
+            icon.raycastTarget = false;
+            return icon;
+        }
+
+        public static Slider CreateSlider(
+            Transform parent,
+            string name,
+            Vector2 size,
+            Vector2 position)
+        {
+            Image background = CreateImage(
+                parent,
+                name,
+                RuntimeUiTheme.SurfaceInset,
+                new Vector2(0.5f, 0.5f),
+                new Vector2(0.5f, 0.5f),
+                size,
+                position);
+            background.sprite = RuntimeUiTheme.InsetSprite;
+            background.type = Image.Type.Sliced;
+
+            Image fill = CreateImage(
+                background.transform,
+                "Fill",
+                RuntimeUiTheme.Jade,
+                new Vector2(0f, 0.5f),
+                new Vector2(1f, 0.5f),
+                new Vector2(-22f, 18f),
+                Vector2.zero);
+            fill.sprite = RuntimeUiTheme.ButtonSprite;
+            fill.type = Image.Type.Sliced;
+            RectTransform fillRect = fill.rectTransform;
+            fillRect.offsetMin = new Vector2(11f, -9f);
+            fillRect.offsetMax = new Vector2(-11f, 9f);
+
+            Image handle = CreateImage(
+                background.transform,
+                "Handle",
+                RuntimeUiTheme.Gold,
+                new Vector2(0.5f, 0.5f),
+                new Vector2(0.5f, 0.5f),
+                new Vector2(40f, 40f),
+                Vector2.zero);
+            handle.sprite = RuntimeUiTheme.SquareButtonSprite;
+            handle.type = Image.Type.Sliced;
+
+            var slider = background.gameObject.AddComponent<Slider>();
+            slider.minValue = 0f;
+            slider.maxValue = 1f;
+            slider.wholeNumbers = false;
+            slider.fillRect = fillRect;
+            slider.handleRect = handle.rectTransform;
+            slider.targetGraphic = handle;
+            slider.direction = Slider.Direction.LeftToRight;
+
+            ColorBlock colors = slider.colors;
+            colors.normalColor = RuntimeUiTheme.Gold;
+            colors.highlightedColor = RuntimeUiTheme.GoldSoft;
+            colors.selectedColor = RuntimeUiTheme.JadeBright;
+            colors.pressedColor = RuntimeUiTheme.Jade;
+            colors.disabledColor = RuntimeUiTheme.Muted;
+            colors.fadeDuration = 0.08f;
+            slider.colors = colors;
+            return slider;
         }
 
         public static void Stretch(RectTransform rect)

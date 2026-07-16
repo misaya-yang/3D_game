@@ -4,6 +4,7 @@ using Wendao.Core;
 using Wendao.Data;
 using Wendao.Systems.Cultivation;
 using Wendao.Systems.Input;
+using Wendao.UI.Common;
 using Wendao.UI.SceneFlow;
 
 namespace Wendao.UI.Cultivation
@@ -20,6 +21,9 @@ namespace Wendao.UI.Cultivation
         public const string SelectedDefaultValue = "已择：{0}";
         public const string ConfirmLocalizationKey = "ui_root_confirm";
         public const string ConfirmDefaultValue = "踏上仙途";
+        public const string PreviewLocalizationKey = "ui_root_preview_hint";
+        public const string PreviewDefaultValue =
+            "先行感应，可在确认前反复比较。";
 
         public const string FiveIntroLocalizationKey = "root_intro_five";
         public const string FiveIntroDefaultValue =
@@ -52,6 +56,8 @@ namespace Wendao.UI.Cultivation
         private bool _initialized;
         private bool _inputSuspended;
         private bool _inputWasEnabled;
+        private bool _selectionWasRandomized;
+        private int _randomPreviewSeed;
 
         public bool IsOpen { get; private set; }
         public SpiritRootType SelectedRoot { get; private set; }
@@ -107,41 +113,73 @@ namespace Wendao.UI.Cultivation
             SelectedRoot = SpiritRootType.None;
             SelectedIntroLocalizationKey = string.Empty;
             SelectedIntroDefaultValue = string.Empty;
-            _selectionText.text = PromptDefaultValue;
+            _selectionWasRandomized = false;
+            _randomPreviewSeed = 0;
+            _selectionText.text = PreviewDefaultValue;
             _introText.text = FiveIntroDefaultValue;
             SetChoiceInteractable(true);
             _confirmButton.gameObject.SetActive(false);
             ApplyVisible(true);
             SuspendGameplayInput();
+            RuntimeUiTheme.Focus(_rootButtons[0]);
         }
 
         public bool SelectRoot(SpiritRootType type)
         {
             ResolveServices();
-            if (!IsOpen || _spiritRoot == null || !_spiritRoot.TryChooseRoot(type))
+            if (!IsOpen
+                || _spiritRoot == null
+                || _spiritRoot.HasChosenRoot
+                || !IsPreviewableRoot(type))
             {
                 return false;
             }
 
             ShowSelectedRoot(type);
+            _selectionWasRandomized = false;
             return true;
         }
 
         public bool SelectRandom()
         {
+            return SelectRandom(UnityEngine.Random.Range(0, int.MaxValue));
+        }
+
+        public bool SelectRandom(int seed)
+        {
             ResolveServices();
-            if (!IsOpen || _spiritRoot == null || !_spiritRoot.TryRandomizeRoot())
+            if (!IsOpen || _spiritRoot == null || _spiritRoot.HasChosenRoot)
             {
                 return false;
             }
 
-            ShowSelectedRoot(_spiritRoot.Root);
+            var random = new System.Random(seed);
+            SpiritRootType rolled = RollPreviewRoot((float)random.NextDouble());
+            if (rolled == SpiritRootType.None)
+            {
+                return false;
+            }
+
+            ShowSelectedRoot(rolled);
+            _selectionWasRandomized = true;
+            _randomPreviewSeed = seed;
             return true;
         }
 
         public void ConfirmSelection()
         {
-            if (!IsOpen || SelectedRoot == SpiritRootType.None)
+            ResolveServices();
+            if (!IsOpen
+                || SelectedRoot == SpiritRootType.None
+                || _spiritRoot == null)
+            {
+                return;
+            }
+
+            bool committed = _selectionWasRandomized
+                ? _spiritRoot.TryRandomizeRoot(_randomPreviewSeed)
+                : _spiritRoot.TryChooseRoot(SelectedRoot);
+            if (!committed || _spiritRoot.Root != SelectedRoot)
             {
                 return;
             }
@@ -225,9 +263,9 @@ namespace Wendao.UI.Cultivation
                 SelectedDefaultValue,
                 GetRootNameDefaultValue(type));
             _introText.text = SelectedIntroDefaultValue;
-            SetChoiceInteractable(false);
+            RefreshRootButtonSelection();
             _confirmButton.gameObject.SetActive(true);
-            _confirmButton.Select();
+            RuntimeUiTheme.Focus(_confirmButton);
         }
 
         private void BuildView()
@@ -242,38 +280,37 @@ namespace Wendao.UI.Cultivation
             Image overlay = RuntimeUiFactory.CreateImage(
                 canvas.transform,
                 "SpiritRootOverlay",
-                new Color(0.015f, 0.025f, 0.02f, 0.88f),
+                RuntimeUiTheme.Overlay,
                 Vector2.zero,
                 Vector2.one,
                 Vector2.zero,
                 Vector2.zero);
             RuntimeUiFactory.Stretch(overlay.rectTransform);
 
-            Image panel = RuntimeUiFactory.CreateImage(
+            Image panel = RuntimeUiFactory.CreatePanel(
                 overlay.transform,
                 "SpiritRootPanel",
-                new Color(0.055f, 0.09f, 0.075f, 0.98f),
-                new Vector2(0.5f, 0.5f),
-                new Vector2(0.5f, 0.5f),
-                new Vector2(1060f, 700f),
+                new Vector2(1120f, 720f),
                 Vector2.zero);
 
-            RuntimeUiFactory.CreateText(
+            Text title = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "SpiritRootTitle",
                 TitleDefaultValue,
-                42,
-                new Color(0.9f, 0.82f, 0.58f, 1f),
+                48,
+                RuntimeUiTheme.Gold,
                 new Vector2(800f, 70f),
-                new Vector2(0f, 285f));
-            RuntimeUiFactory.CreateText(
+                new Vector2(0f, 292f));
+            RuntimeUiTheme.StyleText(title, RuntimeUiTextRole.Title);
+            Text prompt = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "SpiritRootPrompt",
                 PromptDefaultValue,
                 23,
-                new Color(0.82f, 0.86f, 0.77f, 1f),
+                RuntimeUiTheme.Muted,
                 new Vector2(880f, 54f),
-                new Vector2(0f, 220f));
+                new Vector2(0f, 228f));
+            RuntimeUiTheme.StyleText(prompt, RuntimeUiTextRole.Muted);
 
             for (int index = 0; index < PickableRoots.Length; index++)
             {
@@ -282,8 +319,8 @@ namespace Wendao.UI.Cultivation
                     panel.transform,
                     "RootButton_" + root,
                     GetRootNameDefaultValue(root),
-                    new Vector2(170f, 70f),
-                    new Vector2(-360f + index * 180f, 115f));
+                    new Vector2(184f, 82f),
+                    new Vector2(-392f + index * 196f, 122f));
                 button.onClick.AddListener(() => SelectRoot(root));
                 _rootButtons[index] = button;
             }
@@ -292,33 +329,39 @@ namespace Wendao.UI.Cultivation
                 panel.transform,
                 "RootRandomButton",
                 RandomDefaultValue,
-                new Vector2(260f, 66f),
-                new Vector2(0f, 25f));
+                new Vector2(280f, 76f),
+                new Vector2(0f, 20f),
+                false,
+                "star");
             _randomButton.onClick.AddListener(() => SelectRandom());
 
             _selectionText = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "RootSelectionResult",
-                PromptDefaultValue,
+                PreviewDefaultValue,
                 28,
-                new Color(0.92f, 0.84f, 0.62f, 1f),
+                RuntimeUiTheme.GoldSoft,
                 new Vector2(880f, 54f),
-                new Vector2(0f, -70f));
+                new Vector2(0f, -82f));
+            RuntimeUiTheme.StyleText(_selectionText, RuntimeUiTextRole.Heading);
             _introText = RuntimeUiFactory.CreateText(
                 panel.transform,
                 "RootIntro",
                 FiveIntroDefaultValue,
                 23,
-                new Color(0.88f, 0.9f, 0.82f, 1f),
+                RuntimeUiTheme.Parchment,
                 new Vector2(840f, 100f),
-                new Vector2(0f, -150f));
+                new Vector2(0f, -164f));
+            RuntimeUiTheme.StyleText(_introText, RuntimeUiTextRole.Body);
 
             _confirmButton = CreateButton(
                 panel.transform,
                 "RootConfirmButton",
                 ConfirmDefaultValue,
-                new Vector2(260f, 70f),
-                new Vector2(0f, -265f));
+                new Vector2(310f, 88f),
+                new Vector2(0f, -278f),
+                true,
+                "checkmark");
             _confirmButton.onClick.AddListener(ConfirmSelection);
         }
 
@@ -327,32 +370,92 @@ namespace Wendao.UI.Cultivation
             string name,
             string label,
             Vector2 size,
-            Vector2 position)
+            Vector2 position,
+            bool primary = false,
+            string iconName = null)
         {
-            Image image = RuntimeUiFactory.CreateImage(
+            return RuntimeUiFactory.CreateButton(
                 parent,
                 name,
-                new Color(0.15f, 0.31f, 0.24f, 1f),
-                new Vector2(0.5f, 0.5f),
-                new Vector2(0.5f, 0.5f),
-                size,
-                position);
-            Button button = image.gameObject.AddComponent<Button>();
-            button.targetGraphic = image;
-            ColorBlock colors = button.colors;
-            colors.highlightedColor = new Color(0.27f, 0.48f, 0.34f, 1f);
-            colors.pressedColor = new Color(0.09f, 0.19f, 0.14f, 1f);
-            colors.disabledColor = new Color(0.09f, 0.12f, 0.1f, 0.7f);
-            button.colors = colors;
-            RuntimeUiFactory.CreateText(
-                image.transform,
-                "Label",
                 label,
-                23,
-                new Color(0.95f, 0.92f, 0.8f, 1f),
-                size - new Vector2(12f, 8f),
-                Vector2.zero);
-            return button;
+                size,
+                position,
+                primary,
+                iconName);
+        }
+
+        private void RefreshRootButtonSelection()
+        {
+            for (int index = 0; index < _rootButtons.Length; index++)
+            {
+                Button button = _rootButtons[index];
+                bool selected = PickableRoots[index] == SelectedRoot;
+                RuntimeUiTheme.StyleButton(button, selected);
+            }
+
+            RuntimeUiTheme.StyleButton(
+                _randomButton,
+                SelectedRoot == SpiritRootType.Heaven
+                    || SelectedRoot == SpiritRootType.Waste);
+        }
+
+        private static bool IsPreviewableRoot(SpiritRootType type)
+        {
+            for (int index = 0; index < PickableRoots.Length; index++)
+            {
+                if (PickableRoots[index] == type)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static SpiritRootType RollPreviewRoot(float normalizedRoll)
+        {
+            SpiritRootConfig config = ConfigDatabase.Instance?.SpiritRoot;
+            if (config?.Roots == null || config.Roots.Length == 0)
+            {
+                return SpiritRootType.None;
+            }
+
+            float totalWeight = 0f;
+            for (int index = 0; index < config.Roots.Length; index++)
+            {
+                SpiritRootEntry entry = config.Roots[index];
+                if (entry != null && entry.Type != SpiritRootType.None)
+                {
+                    totalWeight += Mathf.Max(0f, entry.Weight);
+                }
+            }
+
+            if (totalWeight <= 0f)
+            {
+                return SpiritRootType.None;
+            }
+
+            float target = Mathf.Clamp01(normalizedRoll) * totalWeight;
+            SpiritRootType fallback = SpiritRootType.None;
+            for (int index = 0; index < config.Roots.Length; index++)
+            {
+                SpiritRootEntry entry = config.Roots[index];
+                if (entry == null
+                    || entry.Type == SpiritRootType.None
+                    || entry.Weight <= 0f)
+                {
+                    continue;
+                }
+
+                fallback = entry.Type;
+                target -= entry.Weight;
+                if (target <= 0f)
+                {
+                    return entry.Type;
+                }
+            }
+
+            return fallback;
         }
 
         private void ResolveServices()
@@ -413,6 +516,10 @@ namespace Wendao.UI.Cultivation
             _canvasGroup.alpha = visible ? 1f : 0f;
             _canvasGroup.interactable = visible;
             _canvasGroup.blocksRaycasts = visible;
+            if (ServiceLocator.TryGet<IUIManager>(out IUIManager uiManager))
+            {
+                uiManager.SetHudVisible(!visible);
+            }
         }
     }
 }

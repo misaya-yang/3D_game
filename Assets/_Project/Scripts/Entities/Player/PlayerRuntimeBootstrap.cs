@@ -4,6 +4,7 @@ using Wendao.CameraSystem;
 using Wendao.Core;
 using Wendao.Entities.Enemy;
 using Wendao.Entities.NPC;
+using Wendao.Entities.Visuals;
 using Wendao.Systems.World;
 
 namespace Wendao.Entities.Player
@@ -21,6 +22,7 @@ namespace Wendao.Entities.Player
 
         public static void Install()
         {
+            BudgetArtShowcaseLauncher.InstallFromCommandLine();
             SceneManager.sceneLoaded -= HandleSceneLoaded;
             SceneManager.sceneLoaded += HandleSceneLoaded;
             TrainingDummyRuntimeBootstrap.Install();
@@ -31,6 +33,8 @@ namespace Wendao.Entities.Player
             CangwuTrialRuntimeBootstrap.Install();
             StoneGeneralRuntimeBootstrap.Install();
             BlackwindDungeonRuntimeBootstrap.Install();
+            AlchemyFurnaceRuntimeBootstrap.Install();
+            BudgetWorldArtBootstrap.Install();
             EnsureForScene(SceneManager.GetActiveScene());
         }
 
@@ -85,6 +89,10 @@ namespace Wendao.Entities.Player
                 CangwuTrialRuntimeBootstrap.EnsureForScene(scene);
                 NpcRuntimeBootstrap.EnsureForScene(scene);
             }
+
+            BudgetVisualFactory.AttachPlayer(player.gameObject);
+            AlchemyFurnaceRuntimeBootstrap.EnsureForScene(scene);
+            BudgetWorldArtBootstrap.EnsureForScene(scene);
 
             return player;
         }

@@ -35,3 +35,11 @@ Thumbs.db
 sysinfo.txt
 *.tmp
 *.unitypackage
+
+# Blender backup files
+*.blend1
+*.blend2
+
+# Python tooling caches
+__pycache__/
+*.py[cod]

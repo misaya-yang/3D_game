@@ -47,6 +47,7 @@ namespace Wendao.Systems.World
             EnsureConfigDatabase();
             EnsureVfxManager();
             EnsureAudioManager();
+            EnsureGameSettingsRuntime();
             EnsureAudioStateController();
             EnsureCombatFeedbackController();
             EnsureDayNightSystem();
@@ -173,6 +174,16 @@ namespace Wendao.Systems.World
             }
 
             manager.EnsureRegistered();
+        }
+
+        private static void EnsureGameSettingsRuntime()
+        {
+            if (Object.FindAnyObjectByType<GameSettingsRuntime>(
+                    FindObjectsInactive.Include) == null)
+            {
+                new GameObject("[GameSettingsRuntime]")
+                    .AddComponent<GameSettingsRuntime>();
+            }
         }
 
         private static void EnsureAudioStateController()

@@ -214,6 +214,13 @@ namespace Wendao.UI.Quest
                 new Color(0.92f, 0.79f, 0.5f, 1f),
                 new Vector2(900f, 60f),
                 new Vector2(0f, 315f));
+            RuntimeUiFactory.CreateIcon(
+                panel.transform,
+                "MapTitleIcon",
+                "star",
+                new Vector2(38f, 38f),
+                new Vector2(-105f, 315f),
+                RuntimeUiTheme.GoldSoft);
             RuntimeUiFactory.CreateText(
                 panel.transform,
                 "MapHelp",
@@ -245,6 +252,13 @@ namespace Wendao.UI.Quest
                     new Color(0.94f, 0.91f, 0.76f, 1f),
                     new Vector2(660f, 70f),
                     Vector2.zero);
+                RuntimeUiFactory.CreateIcon(
+                    image.transform,
+                    "TeleportIcon",
+                    "target",
+                    new Vector2(32f, 32f),
+                    new Vector2(-285f, 0f),
+                    RuntimeUiTheme.GoldSoft);
             }
 
             _selection = RuntimeUiFactory.CreateText(
@@ -254,18 +268,18 @@ namespace Wendao.UI.Quest
                 24,
                 new Color(0.56f, 0.9f, 0.7f, 1f),
                 new Vector2(650f, 55f),
-                new Vector2(0f, -140f));
+                new Vector2(0f, -185f));
             _travelButton = CreateButton(
                 panel.transform,
                 "MapTravel",
                 TravelDefaultValue,
-                new Vector2(-155f, -245f));
+                new Vector2(-155f, -280f));
             _travelButton.onClick.AddListener(() => TryTravelSelected());
             _closeButton = CreateButton(
                 panel.transform,
                 "MapClose",
                 CloseDefaultValue,
-                new Vector2(155f, -245f));
+                new Vector2(155f, -280f));
             _closeButton.onClick.AddListener(() => SetOpen(false));
         }
 

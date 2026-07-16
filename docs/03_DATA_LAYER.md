@@ -41,7 +41,7 @@ public enum GameState { Boot, MainMenu, Loading, Playing, Paused, Dialogue, Cuts
 ## 2. 运行时事件参数
 
 ```csharp
-// Data/Runtime/EventParams.cs + DamageRequest.cs
+// Data/Runtime/EventParams.cs + DamageRequest.cs + AlchemyRuntimeData.cs
 public struct DamageInfo {
     public GameObject Target, Source;
     public float Amount;
@@ -213,6 +213,10 @@ public struct CraftResultInfo {
     public string ResultItemId;
     public int ResultCount;
     public bool Success;
+}
+
+public struct AlchemyFurnaceInfo {
+    public string FurnaceId;
 }
 
 public struct ShopOpenInfo {
@@ -1166,6 +1170,27 @@ public sealed class AlchemySaveData
 `Level=1 / Xp=0`。`XpRequired` 是累计等级阈值，读档拒绝非当前 schema、非有限或
 负 XP，以及与累计阈值推导等级不一致的数据。背包材料与丹药仍只写
 `inventory.json`，一次炼制结束后两个模块同步保存。
+
+### 5.7 G09-01 全局设置 DTO
+
+全局设置不属于任一存档槽，固定写入
+`Application.persistentDataPath/Settings/settings.json`。读取失败或版本不符时回退默认值；
+保存沿用 `JsonStorage.TryWriteAtomic` 的临时文件 + 备份替换策略。
+
+```csharp
+[Serializable]
+public sealed class GameSettingsData
+{
+    public int SchemaVersion = SaveSchema.CurrentVersion;
+    public float MasterVolume = 1f; // 0..1
+    public float BgmVolume = 0.65f; // 0..1
+    public float SfxVolume = 0.8f;  // 0..1
+    public bool Fullscreen = false;
+}
+```
+
+运行时加载与 UI 预览均先 clamp 音量；设置页只有“应用并返回”成功原子写入后才
+更新持久化值。按 Esc 返回时恢复打开设置页之前的音量预览。
 
 ---
 
